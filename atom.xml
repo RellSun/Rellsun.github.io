@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-21T16:07:41.931Z</updated>
+  <updated>2018-07-22T00:55:09.380Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Test</title>
-    <link href="http://yoursite.com/2018/07/22/Test/"/>
-    <id>http://yoursite.com/2018/07/22/Test/</id>
+    <link href="http://yoursite.com/2018/07/22/QT%20note1/"/>
+    <id>http://yoursite.com/2018/07/22/QT note1/</id>
     <published>2018-07-21T16:00:46.000Z</published>
-    <updated>2018-07-21T16:07:41.931Z</updated>
+    <updated>2018-07-22T00:55:09.380Z</updated>
     
     <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href=""></a></li><li><a href=""></a></li></ul></blockquote>]]></content>
     
@@ -47,7 +47,7 @@
     <link href="http://yoursite.com/2018/07/22/c-Primer-Note/"/>
     <id>http://yoursite.com/2018/07/22/c-Primer-Note/</id>
     <published>2018-07-21T16:00:46.000Z</published>
-    <updated>2018-07-21T16:00:46.760Z</updated>
+    <updated>2018-07-22T00:55:23.540Z</updated>
     
     <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href=""></a></li><li><a href=""></a></li></ul></blockquote>]]></content>
     
@@ -62,6 +62,8 @@
       
     
     </summary>
+    
+      <category term="C++" scheme="http://yoursite.com/categories/C/"/>
     
     
   </entry>
