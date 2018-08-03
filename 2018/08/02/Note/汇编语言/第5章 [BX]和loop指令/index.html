@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>第5章 [BX]和loop指令 | Agt Wiki</title>
+    
+    
+        <meta name="keywords" content="汇编" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="1. 使用[bx]访问内存地址要完整的描述一个内存单元，需要知道： 内存单元的地址 内存单元的长度 （或是通过类型推断出长度）  类型推断长度 已知段地址默认保存在ds中，所以mov ax,[bx]可以将ds:bx处长度2个字节单元的数据移动到ax里。 而mov al,[bx]则将同一个起始位置长度1个字节单元的数据移动到al里。  2. Loop指令语法assume cs:codecode se">
+<meta name="keywords" content="汇编">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第5章 [BX]和loop指令">
+<meta property="og:url" content="http://yoursite.com/2018/08/02/Note/汇编语言/第5章 [BX]和loop指令/index.html">
+<meta property="og:site_name" content="Agt Wiki">
+<meta property="og:description" content="1. 使用[bx]访问内存地址要完整的描述一个内存单元，需要知道： 内存单元的地址 内存单元的长度 （或是通过类型推断出长度）  类型推断长度 已知段地址默认保存在ds中，所以mov ax,[bx]可以将ds:bx处长度2个字节单元的数据移动到ax里。 而mov al,[bx]则将同一个起始位置长度1个字节单元的数据移动到al里。  2. Loop指令语法assume cs:codecode se">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-03T03:59:43.558Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第5章 [BX]和loop指令">
+<meta name="twitter:description" content="1. 使用[bx]访问内存地址要完整的描述一个内存单元，需要知道： 内存单元的地址 内存单元的长度 （或是通过类型推断出长度）  类型推断长度 已知段地址默认保存在ds中，所以mov ax,[bx]可以将ds:bx处长度2个字节单元的数据移动到ax里。 而mov al,[bx]则将同一个起始位置长度1个字节单元的数据移动到al里。  2. Loop指令语法assume cs:codecode se">
+    
+
+    
+
+    
+        <link rel="icon" href="../../../../../../favicon.ico" />
+    
+
+    <link rel="stylesheet" href="../../../../../../libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../../../libs/open-sans/styles.css">
+    <link rel="stylesheet" href="../../../../../../libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="../../../../../../css/style.css">
+    <script src="../../../../../../libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../../../../../../libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="../../../../../../libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="../../../../../../libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+    
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="../../../../../../index.html" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Agt Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="../../../../../../index.html">首页</a>
+                
+                    <a class="main-nav-link" href="../../../../../../archives">归档</a>
+                
+                    <a class="main-nav-link" href="../../../../../../categories">分类</a>
+                
+                    <a class="main-nav-link" href="../../../../../../tags">标签</a>
+                
+                    <a class="main-nav-link" href="../../../../../../about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="https://www.gravatar.com/avatar/aeba6473bb7a84967e5636aa8a25ea4c" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '../../../../../../content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="../../../../../../js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="../../../../../../index.html">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="../../../../../../archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="../../../../../../categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="../../../../../../tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="../../../../../../about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="https://www.gravatar.com/avatar/aeba6473bb7a84967e5636aa8a25ea4c?s=128" />
+            <h2 id="name">Agt</h2>
+            <h3 id="title"></h3>
+            <span id="location"><i class="fa fa-map-marker"></i>XiaMen, China</span>
+            <a id="follow" target="_blank" href="https://github.com/Agt799">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                5
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                6
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/Agt799``" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Engineer
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../../07/22/Engineer/QT note1/">QT Note</a></li>  <li class="file"><a href="../../../../../07/02/Engineer/OpenCV-环境搭建/">OpenCV C++环境搭建</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Note
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            汇编语言
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="">第5章 [BX]和loop指令</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="../../../../../05/21/Note/MarkDown Note/">Simple MarkDown Note</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Theory
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../../07/23/Theory/数据库主键类型的选择/">数据库主键的选择</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>archives</span></h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../../../archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../../archives/2018/07/">July 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../../archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tag cloud</span></h3>
+        <div class="widget tagcloud">
+            <a href="../../../../../../tags/C/" style="font-size: 20px;">C++</a> <a href="../../../../../../tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="../../../../../../tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="../../../../../../tags/QT/" style="font-size: 10px;">QT</a> <a href="../../../../../../tags/数据库/" style="font-size: 10px;">数据库</a> <a href="../../../../../../tags/汇编/" style="font-size: 10px;">汇编</a>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Note/汇编语言/第5章 [BX]和loop指令" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="../../../../../../categories/Note/">Note</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="../../../../../../categories/Note/汇编语言/">汇编语言</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="../../../../../../tags/汇编/">汇编</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="">
+            <time datetime="2018-08-02T13:17:30.000Z" itemprop="datePublished">2018-08-02</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a href='https://github.com/agt/Wiki-site/raw/writing/source/_posts/Note/汇编语言/第5章 [BX]和loop指令.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/agt/Wiki-site/edit/writing/source/_posts/Note/汇编语言/第5章 [BX]和loop指令.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/agt/Wiki-site/commits/writing/source/_posts/Note/汇编语言/第5章 [BX]和loop指令.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            第5章 [BX]和loop指令
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-使用-bx-访问内存地址"><span class="toc-number">1.</span> <span class="toc-text">1. 使用[bx]访问内存地址</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#要完整的描述一个内存单元，需要知道："><span class="toc-number">1.1.</span> <span class="toc-text">要完整的描述一个内存单元，需要知道：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类型推断长度"><span class="toc-number">1.2.</span> <span class="toc-text">类型推断长度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Loop指令"><span class="toc-number">2.</span> <span class="toc-text">2. Loop指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-number">2.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行loop指令的步骤"><span class="toc-number">2.2.</span> <span class="toc-text">执行loop指令的步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-安全空间"><span class="toc-number">3.</span> <span class="toc-text">3. 安全空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Tip"><span class="toc-number">4.</span> <span class="toc-text">4. Tip</span></a></li></ol>
+                </div>
+            
+        
+        
+            <h2 id="1-使用-bx-访问内存地址"><a href="#1-使用-bx-访问内存地址" class="headerlink" title="1. 使用[bx]访问内存地址"></a>1. 使用[bx]访问内存地址</h2><h3 id="要完整的描述一个内存单元，需要知道："><a href="#要完整的描述一个内存单元，需要知道：" class="headerlink" title="要完整的描述一个内存单元，需要知道："></a>要完整的描述一个内存单元，需要知道：</h3><ol>
+<li>内存单元的地址</li>
+<li>内存单元的长度 （或是通过类型推断出长度）</li>
+</ol>
+<h3 id="类型推断长度"><a href="#类型推断长度" class="headerlink" title="类型推断长度"></a>类型推断长度</h3><ul>
+<li>已知段地址默认保存在ds中，所以<code>mov ax,[bx]</code>可以将ds:bx处长度2个字节单元的数据移动到ax里。</li>
+<li>而<code>mov al,[bx]</code>则将同一个起始位置长度1个字节单元的数据移动到al里。</li>
+</ul>
+<h2 id="2-Loop指令"><a href="#2-Loop指令" class="headerlink" title="2. Loop指令"></a>2. Loop指令</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code</span><br><span class="line">code <span class="meta">segment</span></span><br><span class="line">    <span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">mov</span> <span class="built_in">cx</span>,<span class="number">236</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">s:</span>  <span class="keyword">add</span> <span class="built_in">ax</span>,<span class="number">123</span></span><br><span class="line">    <span class="keyword">loop</span> s</span><br><span class="line"></span><br><span class="line">    <span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></span><br><span class="line">    <span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line">code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p><code>其中cx内的值为循环次数，s：标识的位置为循环开始地址</code></p>
+<h3 id="执行loop指令的步骤"><a href="#执行loop指令的步骤" class="headerlink" title="执行loop指令的步骤"></a>执行loop指令的步骤</h3><ol>
+<li>cx = cx -1 </li>
+<li>判断cx的值，若不为0则跳转至标号处执行，若为0则向下执行</li>
+</ol>
+<h2 id="3-安全空间"><a href="#3-安全空间" class="headerlink" title="3. 安全空间"></a>3. 安全空间</h2><p>在实模式下运行的设备并没有对硬件系统进行安全性检查的功能，所以可能出现系统级的数据或是程序被用户的汇编程序修改的问题，所以需要避开使用不安全的地址范围</p>
+<ul>
+<li>在Dos下，一般0:200~0:2ff的空间是可以安全使用的</li>
+</ul>
+<h2 id="4-Tip"><a href="#4-Tip" class="headerlink" title="4. Tip"></a>4. Tip</h2><ul>
+<li>在汇编源程序中，数据不能以字母开头，要在数据前补一个’0’ ，  <code>A000h</code>在源程序中要写为<code>0A000h</code></li>
+<li>地址表示法在debug与源程序中的不同<ul>
+<li>指令<code>mov ax,[0]</code>在<code>Debug</code>工具上表示将<code>ds:0</code>地址的数据送入ax寄存器</li>
+<li>而在汇编源程序中被识别为<code>mov ax,0</code>，解决方式：使用显式地给出段寄存器，<code>mov ax,ds:[0]</code>,前缀<code>ds</code>在这里被称为<strong>段前缀</strong></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+    
+        <a href="../../../../../07/23/Theory/数据库主键类型的选择/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">数据库主键的选择</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Agt &copy; 2018 
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        <script src="../../../../../../libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="../../../../../../libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="../../../../../../js/main.js"></script>
+
+    </div>
+</body>
+</html>
