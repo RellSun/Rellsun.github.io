@@ -9,18 +9,18 @@
         <meta name="keywords" content="汇编" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="1. 使用[bx]访问内存地址要完整的描述一个内存单元，需要知道： 内存单元的地址 内存单元的长度 （或是通过类型推断出长度）  类型推断长度 已知段地址默认保存在ds中，所以mov ax,[bx]可以将ds:bx处长度2个字节单元的数据移动到ax里。 而mov al,[bx]则将同一个起始位置长度1个字节单元的数据移动到al里。  2. Loop指令语法assume cs:codecode se">
+    <meta name="description" content="使用[bx]访问内存地址要完整的描述一个内存单元，需要知道：  内存单元的地址 内存单元的长度 （或是通过类型推断出长度）  类型推断长度 已知段地址默认保存在ds中，所以mov ax,[bx]可以将ds:bx处长度2个字节单元的数据移动到ax里。 而mov al,[bx]则将同一个起始位置长度1个字节单元的数据移动到al里。   Loop指令语法assume cs:codecode segmen">
 <meta name="keywords" content="汇编">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第5章 [BX]和loop指令">
 <meta property="og:url" content="http://yoursite.com/2018/08/02/Note/汇编语言/第5章 [BX]和loop指令/index.html">
 <meta property="og:site_name" content="Agt Wiki">
-<meta property="og:description" content="1. 使用[bx]访问内存地址要完整的描述一个内存单元，需要知道： 内存单元的地址 内存单元的长度 （或是通过类型推断出长度）  类型推断长度 已知段地址默认保存在ds中，所以mov ax,[bx]可以将ds:bx处长度2个字节单元的数据移动到ax里。 而mov al,[bx]则将同一个起始位置长度1个字节单元的数据移动到al里。  2. Loop指令语法assume cs:codecode se">
+<meta property="og:description" content="使用[bx]访问内存地址要完整的描述一个内存单元，需要知道：  内存单元的地址 内存单元的长度 （或是通过类型推断出长度）  类型推断长度 已知段地址默认保存在ds中，所以mov ax,[bx]可以将ds:bx处长度2个字节单元的数据移动到ax里。 而mov al,[bx]则将同一个起始位置长度1个字节单元的数据移动到al里。   Loop指令语法assume cs:codecode segmen">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-03T03:59:43.558Z">
+<meta property="og:updated_time" content="2018-08-03T04:46:48.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第5章 [BX]和loop指令">
-<meta name="twitter:description" content="1. 使用[bx]访问内存地址要完整的描述一个内存单元，需要知道： 内存单元的地址 内存单元的长度 （或是通过类型推断出长度）  类型推断长度 已知段地址默认保存在ds中，所以mov ax,[bx]可以将ds:bx处长度2个字节单元的数据移动到ax里。 而mov al,[bx]则将同一个起始位置长度1个字节单元的数据移动到al里。  2. Loop指令语法assume cs:codecode se">
+<meta name="twitter:description" content="使用[bx]访问内存地址要完整的描述一个内存单元，需要知道：  内存单元的地址 内存单元的长度 （或是通过类型推断出长度）  类型推断长度 已知段地址默认保存在ds中，所以mov ax,[bx]可以将ds:bx处长度2个字节单元的数据移动到ax里。 而mov al,[bx]则将同一个起始位置长度1个字节单元的数据移动到al里。   Loop指令语法assume cs:codecode segmen">
     
 
     
@@ -216,7 +216,7 @@
                             &nbsp;
                             Engineer
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../../07/22/Engineer/QT note1/">QT Note</a></li>  <li class="file"><a href="../../../../../07/02/Engineer/OpenCV-环境搭建/">OpenCV C++环境搭建</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../../07/02/Engineer/OpenCV-环境搭建/">OpenCV C++环境搭建</a></li>  <li class="file"><a href="../../../../../07/22/Engineer/QT note1/">QT Note</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory open">
@@ -395,12 +395,13 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-使用-bx-访问内存地址"><span class="toc-number">1.</span> <span class="toc-text">1. 使用[bx]访问内存地址</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#要完整的描述一个内存单元，需要知道："><span class="toc-number">1.1.</span> <span class="toc-text">要完整的描述一个内存单元，需要知道：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类型推断长度"><span class="toc-number">1.2.</span> <span class="toc-text">类型推断长度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Loop指令"><span class="toc-number">2.</span> <span class="toc-text">2. Loop指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-number">2.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行loop指令的步骤"><span class="toc-number">2.2.</span> <span class="toc-text">执行loop指令的步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-安全空间"><span class="toc-number">3.</span> <span class="toc-text">3. 安全空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Tip"><span class="toc-number">4.</span> <span class="toc-text">4. Tip</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-bx-访问内存地址"><span class="toc-number">1.</span> <span class="toc-text">使用[bx]访问内存地址</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类型推断长度"><span class="toc-number">1.1.</span> <span class="toc-text">类型推断长度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Loop指令"><span class="toc-number">2.</span> <span class="toc-text">Loop指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-number">2.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行loop指令的步骤"><span class="toc-number">2.2.</span> <span class="toc-text">执行loop指令的步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安全空间"><span class="toc-number">3.</span> <span class="toc-text">安全空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tip"><span class="toc-number">4.</span> <span class="toc-text">Tip</span></a></li></ol>
                 </div>
             
         
         
-            <h2 id="1-使用-bx-访问内存地址"><a href="#1-使用-bx-访问内存地址" class="headerlink" title="1. 使用[bx]访问内存地址"></a>1. 使用[bx]访问内存地址</h2><h3 id="要完整的描述一个内存单元，需要知道："><a href="#要完整的描述一个内存单元，需要知道：" class="headerlink" title="要完整的描述一个内存单元，需要知道："></a>要完整的描述一个内存单元，需要知道：</h3><ol>
+            <h2 id="使用-bx-访问内存地址"><a href="#使用-bx-访问内存地址" class="headerlink" title="使用[bx]访问内存地址"></a>使用[bx]访问内存地址</h2><p>要完整的描述一个内存单元，需要知道：</p>
+<ol>
 <li>内存单元的地址</li>
 <li>内存单元的长度 （或是通过类型推断出长度）</li>
 </ol>
@@ -408,17 +409,20 @@
 <li>已知段地址默认保存在ds中，所以<code>mov ax,[bx]</code>可以将ds:bx处长度2个字节单元的数据移动到ax里。</li>
 <li>而<code>mov al,[bx]</code>则将同一个起始位置长度1个字节单元的数据移动到al里。</li>
 </ul>
-<h2 id="2-Loop指令"><a href="#2-Loop指令" class="headerlink" title="2. Loop指令"></a>2. Loop指令</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code</span><br><span class="line">code <span class="meta">segment</span></span><br><span class="line">    <span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">mov</span> <span class="built_in">cx</span>,<span class="number">236</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">s:</span>  <span class="keyword">add</span> <span class="built_in">ax</span>,<span class="number">123</span></span><br><span class="line">    <span class="keyword">loop</span> s</span><br><span class="line"></span><br><span class="line">    <span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></span><br><span class="line">    <span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line">code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Loop指令"><a href="#Loop指令" class="headerlink" title="Loop指令"></a>Loop指令</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code</span><br><span class="line">code <span class="meta">segment</span></span><br><span class="line">    <span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">mov</span> <span class="built_in">cx</span>,<span class="number">236</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">s:</span>  <span class="keyword">add</span> <span class="built_in">ax</span>,<span class="number">123</span></span><br><span class="line">    <span class="keyword">loop</span> s</span><br><span class="line"></span><br><span class="line">    <span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></span><br><span class="line">    <span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line">code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 <p><code>其中cx内的值为循环次数，s：标识的位置为循环开始地址</code></p>
 <h3 id="执行loop指令的步骤"><a href="#执行loop指令的步骤" class="headerlink" title="执行loop指令的步骤"></a>执行loop指令的步骤</h3><ol>
 <li>cx = cx -1 </li>
 <li>判断cx的值，若不为0则跳转至标号处执行，若为0则向下执行</li>
 </ol>
-<h2 id="3-安全空间"><a href="#3-安全空间" class="headerlink" title="3. 安全空间"></a>3. 安全空间</h2><p>在实模式下运行的设备并没有对硬件系统进行安全性检查的功能，所以可能出现系统级的数据或是程序被用户的汇编程序修改的问题，所以需要避开使用不安全的地址范围</p>
+<hr>
+<h2 id="安全空间"><a href="#安全空间" class="headerlink" title="安全空间"></a>安全空间</h2><p>在实模式下运行的设备并没有对硬件系统进行安全性检查的功能，所以可能出现系统级的数据或是程序被用户的汇编程序修改的问题，所以需要避开使用不安全的地址范围</p>
 <ul>
 <li>在Dos下，一般0:200~0:2ff的空间是可以安全使用的</li>
 </ul>
-<h2 id="4-Tip"><a href="#4-Tip" class="headerlink" title="4. Tip"></a>4. Tip</h2><ul>
+<hr>
+<h2 id="Tip"><a href="#Tip" class="headerlink" title="Tip"></a>Tip</h2><ul>
 <li>在汇编源程序中，数据不能以字母开头，要在数据前补一个’0’ ，  <code>A000h</code>在源程序中要写为<code>0A000h</code></li>
 <li>地址表示法在debug与源程序中的不同<ul>
 <li>指令<code>mov ax,[0]</code>在<code>Debug</code>工具上表示将<code>ds:0</code>地址的数据送入ax寄存器</li>
