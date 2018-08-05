@@ -84,14 +84,14 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -103,11 +103,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -137,7 +137,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
     </div>
 
                 </td>
@@ -157,16 +157,16 @@
             <h2 id="name">Agt</h2>
             <h3 id="title"></h3>
             <span id="location"><i class="fa fa-map-marker"></i>XiaMen, China</span>
-            <a id="follow" target="_blank" href="https://github.com/Agt799">关注我</a>
+            <a id="follow" target="_blank" href="https://github.com/Agt799">FOLLOW</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                6
-                <span>文章</span>
+                7
+                <span>posts</span>
             </div>
             <div class="article-info-block">
                 7
-                <span>标签</span>
+                <span>tags</span>
             </div>
         </div>
         
@@ -195,7 +195,7 @@
         
     <div class="widget-wrap" id='categories'>
         <h3 class="widget-title">
-            <span>分类</span>
+            <span>categories</span>
             &nbsp;
             <a id='allExpand' href="#">
                 <i class="fa fa-angle-double-down fa-2x"></i>
@@ -211,7 +211,7 @@
                             &nbsp;
                             Engineer
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="2018/07/02/Engineer/OpenCV-环境搭建/">OpenCV C++环境搭建</a></li>  <li class="file"><a href="2018/07/22/Engineer/QT note1/">QT Note</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="2018/08/05/Engineer/归并排序/">归并排序</a></li>  <li class="file"><a href="2018/07/02/Engineer/OpenCV-环境搭建/">OpenCV C++环境搭建</a></li>  <li class="file"><a href="2018/07/22/Engineer/QT note1/">QT Note</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -319,18 +319,18 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title"><span>归档</span></h3>
+        <h3 class="widget-title"><span>archives</span></h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2018/07/">July 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2018/08/">August 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2018/07/">July 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title"><span>标签云</span></h3>
+        <h3 class="widget-title"><span>tag cloud</span></h3>
         <div class="widget tagcloud">
-            <a href="tags/C/" style="font-size: 20px;">C++</a> <a href="tags/CLRS/" style="font-size: 10px;">CLRS</a> <a href="tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="tags/QT/" style="font-size: 10px;">QT</a> <a href="tags/数据库/" style="font-size: 10px;">数据库</a> <a href="tags/汇编/" style="font-size: 10px;">汇编</a>
+            <a href="tags/C/" style="font-size: 20px;">C++</a> <a href="tags/CLRS/" style="font-size: 15px;">CLRS</a> <a href="tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="tags/QT/" style="font-size: 10px;">QT</a> <a href="tags/数据库/" style="font-size: 10px;">数据库</a> <a href="tags/汇编/" style="font-size: 10px;">汇编</a>
         </div>
     </div>
 
@@ -339,6 +339,110 @@
 </aside>
             
             <section id="main">
+        <article id="post-Engineer/归并排序" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="categories/Engineer/">Engineer</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="tags/C/">C++</a>, <a class="tag-link" href="tags/CLRS/">CLRS</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="2018/08/05/Engineer/归并排序/">
+            <time datetime="2018-08-05T04:23:33.000Z" itemprop="datePublished">2018-08-05</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a href='https://github.com/agt/Wiki-site/raw/writing/source/_posts/Engineer/归并排序.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/agt/Wiki-site/edit/writing/source/_posts/Engineer/归并排序.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/agt/Wiki-site/commits/writing/source/_posts/Engineer/归并排序.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="2018/08/05/Engineer/归并排序/">归并排序</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><p>归并排序是一种遵循<strong>分治法</strong>思想，时间复杂度<code>O(nlgn)</code>的排序算法</p>
+<hr>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h3 id="基于分治模式"><a href="#基于分治模式" class="headerlink" title="基于分治模式"></a>基于分治模式</h3><ol>
+<li>分解：分解待排序的n各元素的序列成各具n/2个元素的两个子序列</li>
+<li>解决：使用归并排序递归地排序两个子序列</li>
+<p>
+                
+            
+        
+        
+            </div>   
+            <div class="article-more-link">
+                <a href="2018/08/05/Engineer/归并排序/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
         <article id="post-Note/算法导论/算法基础" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -429,7 +533,7 @@
         
             </div>   
             <div class="article-more-link">
-                <a href="2018/08/03/Note/算法导论/算法基础/#more">查看更多</a>
+                <a href="2018/08/03/Note/算法导论/算法基础/#more">Read More</a>
             </div>
         
         <footer class="article-footer">
@@ -533,7 +637,7 @@
         
             </div>   
             <div class="article-more-link">
-                <a href="2018/08/02/Note/汇编语言/第5章 [BX]和loop指令/#more">查看更多</a>
+                <a href="2018/08/02/Note/汇编语言/第5章 [BX]和loop指令/#more">Read More</a>
             </div>
         
         <footer class="article-footer">
@@ -637,7 +741,7 @@
         
             </div>   
             <div class="article-more-link">
-                <a href="2018/07/23/Theory/数据库主键类型的选择/#more">查看更多</a>
+                <a href="2018/07/23/Theory/数据库主键类型的选择/#more">Read More</a>
             </div>
         
         <footer class="article-footer">
@@ -741,7 +845,7 @@
         
             </div>   
             <div class="article-more-link">
-                <a href="2018/07/22/Engineer/QT note1/#more">查看更多</a>
+                <a href="2018/07/22/Engineer/QT note1/#more">Read More</a>
             </div>
         
         <footer class="article-footer">
@@ -845,7 +949,7 @@
         
             </div>   
             <div class="article-more-link">
-                <a href="2018/07/02/Engineer/OpenCV-环境搭建/#more">查看更多</a>
+                <a href="2018/07/02/Engineer/OpenCV-环境搭建/#more">Read More</a>
             </div>
         
         <footer class="article-footer">
@@ -949,7 +1053,7 @@
         
             </div>   
             <div class="article-more-link">
-                <a href="2018/05/21/Note/MarkDown Note/#more">查看更多</a>
+                <a href="2018/05/21/Note/MarkDown Note/#more">Read More</a>
             </div>
         
         <footer class="article-footer">

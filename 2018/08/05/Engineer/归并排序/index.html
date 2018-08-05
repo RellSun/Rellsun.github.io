@@ -3,24 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>数据库主键的选择 | Agt Wiki</title>
+    <title>归并排序 | Agt Wiki</title>
     
     
-        <meta name="keywords" content="数据库" />
+        <meta name="keywords" content="CLRS,C++" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="主键的作用保证了每行数据的唯一性，选择出主键让表达到了数据库标准化第一范式 UUID (Universally Unique Identifier)通用唯一识别码 UUID是一种软件架构的标准 由一组32位的16进制数据构成，形式为用连字号把32个数据分为8-4-4-12，故加上‘-’字符一共有36位数，例如123e4567-e89b-12d3-a456-426655440000 使用随机数算法以">
-<meta name="keywords" content="数据库">
+    <meta name="description" content="归并排序是一种遵循分治法思想，时间复杂度O(nlgn)的排序算法  原理基于分治模式 分解：分解待排序的n各元素的序列成各具n/2个元素的两个子序列 解决：使用归并排序递归地排序两个子序列 合并：合并两个已排列好的子序列来产生最终结果  伪代码//A:array, Left:p, Center:q, Right:rMERGE(A,p,q,r)    n1 = q - p + 1    n2 = r">
+<meta name="keywords" content="CLRS,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库主键的选择">
-<meta property="og:url" content="http://yoursite.com/2018/07/23/Theory/数据库主键类型的选择/index.html">
+<meta property="og:title" content="归并排序">
+<meta property="og:url" content="http://yoursite.com/2018/08/05/Engineer/归并排序/index.html">
 <meta property="og:site_name" content="Agt Wiki">
-<meta property="og:description" content="主键的作用保证了每行数据的唯一性，选择出主键让表达到了数据库标准化第一范式 UUID (Universally Unique Identifier)通用唯一识别码 UUID是一种软件架构的标准 由一组32位的16进制数据构成，形式为用连字号把32个数据分为8-4-4-12，故加上‘-’字符一共有36位数，例如123e4567-e89b-12d3-a456-426655440000 使用随机数算法以">
+<meta property="og:description" content="归并排序是一种遵循分治法思想，时间复杂度O(nlgn)的排序算法  原理基于分治模式 分解：分解待排序的n各元素的序列成各具n/2个元素的两个子序列 解决：使用归并排序递归地排序两个子序列 合并：合并两个已排列好的子序列来产生最终结果  伪代码//A:array, Left:p, Center:q, Right:rMERGE(A,p,q,r)    n1 = q - p + 1    n2 = r">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-02T13:07:11.513Z">
+<meta property="og:updated_time" content="2018-08-05T05:46:10.409Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库主键的选择">
-<meta name="twitter:description" content="主键的作用保证了每行数据的唯一性，选择出主键让表达到了数据库标准化第一范式 UUID (Universally Unique Identifier)通用唯一识别码 UUID是一种软件架构的标准 由一组32位的16进制数据构成，形式为用连字号把32个数据分为8-4-4-12，故加上‘-’字符一共有36位数，例如123e4567-e89b-12d3-a456-426655440000 使用随机数算法以">
+<meta name="twitter:title" content="归并排序">
+<meta name="twitter:description" content="归并排序是一种遵循分治法思想，时间复杂度O(nlgn)的排序算法  原理基于分治模式 分解：分解待排序的n各元素的序列成各具n/2个元素的两个子序列 解决：使用归并排序递归地排序两个子序列 合并：合并两个已排列好的子序列来产生最终结果  伪代码//A:array, Left:p, Center:q, Right:rMERGE(A,p,q,r)    n1 = q - p + 1    n2 = r">
     
 
     
@@ -210,13 +210,13 @@
         
         
          <ul class="unstyled" id="tree" > 
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             Engineer
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../08/05/Engineer/归并排序/">归并排序</a></li>  <li class="file"><a href="../../../02/Engineer/OpenCV-环境搭建/">OpenCV C++环境搭建</a></li>  <li class="file"><a href="../../../22/Engineer/QT note1/">QT Note</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="">归并排序</a></li>  <li class="file"><a href="../../../../07/02/Engineer/OpenCV-环境搭建/">OpenCV C++环境搭建</a></li>  <li class="file"><a href="../../../../07/22/Engineer/QT note1/">QT Note</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -232,7 +232,7 @@
                             &nbsp;
                             汇编语言
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../08/02/Note/汇编语言/第5章 [BX]和loop指令/">第5章 [BX]和loop指令</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../02/Note/汇编语言/第5章 [BX]和loop指令/">第5章 [BX]和loop指令</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -241,18 +241,18 @@
                             &nbsp;
                             算法导论
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../08/03/Note/算法导论/算法基础/">C1&2 算法基础</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../03/Note/算法导论/算法基础/">C1&2 算法基础</a></li>  </ul> 
                     </li> 
                      <li class="file"><a href="../../../../05/21/Note/MarkDown Note/">Simple MarkDown Note</a></li>  </ul> 
                     </li> 
                     
-                    <li class="directory open">
+                    <li class="directory">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder-open"></i>
+                            <i class="fa fa-folder"></i>
                             &nbsp;
                             Theory
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="">数据库主键的选择</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../07/23/Theory/数据库主键类型的选择/">数据库主键的选择</a></li>  </ul> 
                     </li> 
                      </ul> 
     </div>
@@ -343,7 +343,7 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main"><article id="post-Theory/数据库主键类型的选择" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Engineer/归并排序" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -353,20 +353,20 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="../../../../../categories/Theory/">Theory</a>
+        <a class="article-category-link" href="../../../../../categories/Engineer/">Engineer</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="../../../../../tags/数据库/">数据库</a>
+        <a class="tag-link" href="../../../../../tags/C/">C++</a>, <a class="tag-link" href="../../../../../tags/CLRS/">CLRS</a>
     </div>
 
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="">
-            <time datetime="2018-07-23T01:44:01.000Z" itemprop="datePublished">2018-07-23</time>
+            <time datetime="2018-08-05T04:23:33.000Z" itemprop="datePublished">2018-08-05</time>
         </a>
     </div>
 
@@ -377,13 +377,13 @@
                         
                         
                             <div class="article-meta-button">
-                                <a href='https://github.com/agt/Wiki-site/raw/writing/source/_posts/Theory/数据库主键类型的选择.md'> Source </a>
+                                <a href='https://github.com/agt/Wiki-site/raw/writing/source/_posts/Engineer/归并排序.md'> Source </a>
                             </div>
                             <div class="article-meta-button">
-                                <a href='https://github.com/agt/Wiki-site/edit/writing/source/_posts/Theory/数据库主键类型的选择.md'> Edit </a>
+                                <a href='https://github.com/agt/Wiki-site/edit/writing/source/_posts/Engineer/归并排序.md'> Edit </a>
                             </div>
                             <div class="article-meta-button">
-                                <a href='https://github.com/agt/Wiki-site/commits/writing/source/_posts/Theory/数据库主键类型的选择.md'> History </a>
+                                <a href='https://github.com/agt/Wiki-site/commits/writing/source/_posts/Engineer/归并排序.md'> History </a>
                             </div>
                         
                     </div>
@@ -391,7 +391,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            数据库主键的选择
+            归并排序
         </h1>
     
 
@@ -404,23 +404,38 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#主键的作用"><span class="toc-number">1.</span> <span class="toc-text">主键的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UUID-Universally-Unique-Identifier-通用唯一识别码"><span class="toc-number">2.</span> <span class="toc-text">UUID (Universally Unique Identifier)通用唯一识别码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主键的选择"><span class="toc-number"></span> <span class="toc-text">主键的选择</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-number">1.</span> <span class="toc-text">原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于分治模式"><span class="toc-number">1.1.</span> <span class="toc-text">基于分治模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#伪代码"><span class="toc-number">1.2.</span> <span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法演示"><span class="toc-number">1.3.</span> <span class="toc-text">算法演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环不等式证明"><span class="toc-number">1.4.</span> <span class="toc-text">循环不等式证明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用"><span class="toc-number">2.</span> <span class="toc-text">应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-逆序对"><span class="toc-number">2.1.</span> <span class="toc-text">1.逆序对</span></a></li></ol></li></ol>
                 </div>
             
         
         
-            <h3 id="主键的作用"><a href="#主键的作用" class="headerlink" title="主键的作用"></a>主键的作用</h3><p>保证了每行数据的唯一性，选择出主键让表达到了数据库标准化<a href="https://zh.wikipedia.org/wiki/%E7%AC%AC%E4%B8%80%E6%AD%A3%E8%A6%8F%E5%8C%96" target="_blank" rel="noopener">第一范式</a></p>
-<h3 id="UUID-Universally-Unique-Identifier-通用唯一识别码"><a href="#UUID-Universally-Unique-Identifier-通用唯一识别码" class="headerlink" title="UUID (Universally Unique Identifier)通用唯一识别码"></a>UUID (Universally Unique Identifier)通用唯一识别码</h3><ul>
-<li>UUID是一种软件架构的标准</li>
-<li>由一组32位的16进制数据构成，形式为用连字号把32个数据分为8-4-4-12，故加上‘-’字符一共有36位数，例如<code>123e4567-e89b-12d3-a456-426655440000</code></li>
-<li>使用随机数算法以及巨大的密钥空间保证了UUID极低重复性</li>
-</ul>
-<h2 id="主键的选择"><a href="#主键的选择" class="headerlink" title="主键的选择"></a>主键的选择</h2><ol>
-<li>使用 自增int型 作为主键</li>
-<li>使用 UUID 作为主键</li>
-<li>使用自定义的介于二者之间</li>
+            <p>归并排序是一种遵循<strong>分治法</strong>思想，时间复杂度<code>O(nlgn)</code>的排序算法</p>
+<hr>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h3 id="基于分治模式"><a href="#基于分治模式" class="headerlink" title="基于分治模式"></a>基于分治模式</h3><ol>
+<li>分解：分解待排序的n各元素的序列成各具n/2个元素的两个子序列</li>
+<li>解决：使用归并排序递归地排序两个子序列</li>
+<li>合并：合并两个已排列好的子序列来产生最终结果</li>
 </ol>
-
+<h3 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//A:array, Left:p, Center:q, Right:r</span></span><br><span class="line">MERGE(A,p,q,r)</span><br><span class="line">    n1 = q - p + <span class="number">1</span></span><br><span class="line">    n2 = r - q</span><br><span class="line"></span><br><span class="line">    let L[<span class="number">1.</span>..n1+<span class="number">1</span>] <span class="keyword">and</span> R[<span class="number">1.</span>.n2+<span class="number">1</span>] be <span class="keyword">new</span> arrays</span><br><span class="line">    <span class="keyword">for</span> i = <span class="number">1</span> to n1</span><br><span class="line">        L[i] = A[p+i<span class="number">-1</span>]</span><br><span class="line">    <span class="keyword">for</span> j = <span class="number">1</span> to n2</span><br><span class="line">        R[j] = A[q+j]</span><br><span class="line">    L[n1+<span class="number">1</span>] = MAXIMUM</span><br><span class="line">    R[n2+<span class="number">1</span>] = MAXIMUM</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> k = p to r</span><br><span class="line">        <span class="keyword">if</span> L[i] &lt;= R[j]</span><br><span class="line">            A[k] = L[i]</span><br><span class="line">            i++</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            A[k] = R[j]</span><br><span class="line">            j++</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">MERGE_SORT(A,p,r)</span><br><span class="line">    <span class="keyword">if</span> p &lt; r</span><br><span class="line">        q = p + r / <span class="number">2</span></span><br><span class="line">        MERGE_SORT(A,p,q)</span><br><span class="line">        MERGE_SORT(A,q+<span class="number">1</span>,r)</span><br><span class="line">        MERGE(A,p,q,r)</span><br></pre></td></tr></table></figure>
+<h3 id="算法演示"><a href="#算法演示" class="headerlink" title="算法演示"></a>算法演示</h3><p><a href="https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html" target="_blank" rel="noopener">归并排序演示</a></p>
+<h3 id="循环不等式证明"><a href="#循环不等式证明" class="headerlink" title="循环不等式证明"></a>循环不等式证明</h3><blockquote>
+<p>针对Merge的循环，循环每次迭代时，子数组A[p..k-1]按照排序好的顺序（这里为非降序）包含了两个子数组L[1..n1+1]和R[1..n2+1]中的k-p个最小的元素，同时在每次循环中L[i]和R[j]都是各自数组中未被复制回原数组A的最小元素</p>
+</blockquote>
+<ul>
+<li><strong>初始化</strong>：第一次迭代前，<code>k==p</code>，所以子数组<code>A[p..k-1]</code>为空；又<code>i=j=1</code>,所以L[i]和R[j]都是各自数组中未被复制回原数组A的最小元素</li>
+<li><strong>保持</strong>：若<code>L[i] &lt;= R[j]</code>,则将L[i]复制为A[k];同样若<code>L[i] &gt; R[j]</code>，则将R[i]复制回A[k];之后将k增加，则增大了子数组<code>A[p..k-1]</code>的范围，包含了刚刚以升序加入的值；同时i和j对应的自增1，指向现在未被复制回数组的最小元素</li>
+<li><strong>终止</strong>：此时<code>k=r+1</code>，根据循环不变式，子数组<code>A[p..k-1]</code>就是原数组A排序后的结果；且对于两个数组L和R，除了其中标志为<code>MAXIMUM</code>的两个哨兵值以外已全部回到原数组A</li>
+</ul>
+<hr>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="1-逆序对"><a href="#1-逆序对" class="headerlink" title="1.逆序对"></a>1.逆序对</h3><blockquote>
+<p>在数组中的两个数字如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。给你一个数组，求出这个数组中逆序对的总数。<br>概括：如果a[i] &gt; a[j] 且 i &lt; j， a[i] 和 a[j] 构成一个逆序对。</p>
+</blockquote>
+<ul>
+<li>CLRS 思考题2.4</li>
+<li><a href="https://www.lintcode.com/problem/reverse-pairs/description" target="_blank" rel="noopener">LintCode 532</a></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	* @param A: an array</span></span><br><span class="line"><span class="comment">	* @return: total of reverse pairs</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">reversePairs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> mergeSortMod(A,<span class="number">0</span>,A.size()<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">mergeSortMod</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A,<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (left &lt; right)&#123;</span><br><span class="line">			<span class="keyword">long</span> <span class="keyword">long</span> pairs = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">int</span> center = (left + right) / <span class="number">2</span>;</span><br><span class="line">			pairs += mergeSortMod(A, left, center);</span><br><span class="line">			pairs += mergeSortMod(A, center + <span class="number">1</span>, right);</span><br><span class="line">			pairs += merge(A, left, center, right);</span><br><span class="line">			<span class="keyword">return</span> pairs;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">long</span> <span class="keyword">long</span>  <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="keyword">int</span> left, <span class="keyword">int</span> center, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> indexL = left;</span><br><span class="line">		<span class="keyword">int</span> indexR = center + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> indexArray = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> size = right - left + <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;tempArray(size);</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> pairs = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (indexL &lt;= center &amp;&amp; indexR &lt;= right) &#123;</span><br><span class="line">			<span class="keyword">if</span> (A.at(indexL) &gt; A.at(indexR)) &#123;</span><br><span class="line">				tempArray[indexArray++] = A.at(indexR++);</span><br><span class="line">				pairs += (center - indexL + <span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				tempArray[indexArray++] = A.at(indexL++);</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//add all the remaining number </span></span><br><span class="line">		<span class="keyword">while</span> (indexL &lt;= center) &#123;</span><br><span class="line">			tempArray[indexArray++] = A.at(indexL++);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (indexR &lt;= right) &#123;</span><br><span class="line">			tempArray[indexArray++] = A.at(indexR++);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> boundSize = tempArray.size();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; boundSize; i++) &#123;</span><br><span class="line">			A[i + left] = tempArray[i];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> pairs;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
             </div>
         
         <footer class="article-footer">
@@ -432,19 +447,10 @@
     
 <nav id="article-nav">
     
-        <a href="../../../../08/02/Note/汇编语言/第5章 [BX]和loop指令/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    第5章 [BX]和loop指令
-                
-            </div>
-        </a>
     
-    
-        <a href="../../../22/Engineer/QT note1/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="../../../03/Note/算法导论/算法基础/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">QT Note</div>
+            <div class="article-nav-title">C1&amp;2 算法基础</div>
         </a>
     
 </nav>
