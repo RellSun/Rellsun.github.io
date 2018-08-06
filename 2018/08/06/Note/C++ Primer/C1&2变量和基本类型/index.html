@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>C1&amp;2变量和基本类型 | Agt Wiki</title>
+    
+    
+        <meta name="keywords" content="C++" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="C++是一种相对比较复杂的，接近底层的编译语言  C1初识C++基本IO cin是一个istream对象，用来从标准输入中读取数据 cout是一个ostream对象，用于将数据写入标准输出 cerr是一个ostream对象，关联到标准错误，通常写入到与标准输出相同的设备，默认情况下写到Cerr的数据是不缓冲的  注释C++中有两种注释  以双斜线 // 开始，右侧的所有内容被识别为注释 从 /*">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C1&amp;2变量和基本类型">
+<meta property="og:url" content="http://yoursite.com/2018/08/06/Note/C++ Primer/C1&2变量和基本类型/index.html">
+<meta property="og:site_name" content="Agt Wiki">
+<meta property="og:description" content="C++是一种相对比较复杂的，接近底层的编译语言  C1初识C++基本IO cin是一个istream对象，用来从标准输入中读取数据 cout是一个ostream对象，用于将数据写入标准输出 cerr是一个ostream对象，关联到标准错误，通常写入到与标准输出相同的设备，默认情况下写到Cerr的数据是不缓冲的  注释C++中有两种注释  以双斜线 // 开始，右侧的所有内容被识别为注释 从 /*">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12312259-50c19009c0eb3066.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-06T14:06:14.709Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C1&amp;2变量和基本类型">
+<meta name="twitter:description" content="C++是一种相对比较复杂的，接近底层的编译语言  C1初识C++基本IO cin是一个istream对象，用来从标准输入中读取数据 cout是一个ostream对象，用于将数据写入标准输出 cerr是一个ostream对象，关联到标准错误，通常写入到与标准输出相同的设备，默认情况下写到Cerr的数据是不缓冲的  注释C++中有两种注释  以双斜线 // 开始，右侧的所有内容被识别为注释 从 /*">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12312259-50c19009c0eb3066.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+    
+
+    
+
+    
+        <link rel="icon" href="../../../../../../favicon.ico" />
+    
+
+    <link rel="stylesheet" href="../../../../../../libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../../../libs/open-sans/styles.css">
+    <link rel="stylesheet" href="../../../../../../libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="../../../../../../css/style.css">
+    <script src="../../../../../../libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../../../../../../libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="../../../../../../libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="../../../../../../libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+    
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="../../../../../../index.html" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Agt Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="../../../../../../index.html">首页</a>
+                
+                    <a class="main-nav-link" href="../../../../../../archives">归档</a>
+                
+                    <a class="main-nav-link" href="../../../../../../categories">分类</a>
+                
+                    <a class="main-nav-link" href="../../../../../../tags">标签</a>
+                
+                    <a class="main-nav-link" href="../../../../../../about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="https://www.gravatar.com/avatar/aeba6473bb7a84967e5636aa8a25ea4c" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '../../../../../../content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="../../../../../../js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="../../../../../../index.html">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="../../../../../../archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="../../../../../../categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="../../../../../../tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="../../../../../../about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="https://www.gravatar.com/avatar/aeba6473bb7a84967e5636aa8a25ea4c?s=128" />
+            <h2 id="name">Agt</h2>
+            <h3 id="title"></h3>
+            <span id="location"><i class="fa fa-map-marker"></i>XiaMen, China</span>
+            <a id="follow" target="_blank" href="https://github.com/Agt799">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                8
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                7
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/Agt799``" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Engineer
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../05/Engineer/归并排序/">归并排序</a></li>  <li class="file"><a href="../../../../../07/02/Engineer/OpenCV-环境搭建/">OpenCV C++环境搭建</a></li>  <li class="file"><a href="../../../../../07/22/Engineer/QT note1/">QT Note</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Note
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            C++ Primer
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="">C1&2变量和基本类型</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            汇编语言
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../02/Note/汇编语言/第5章 [BX]和loop指令/">第5章 [BX]和loop指令</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            算法导论
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../03/Note/算法导论/算法基础/">C1&2 算法基础</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="../../../../../05/21/Note/MarkDown Note/">Simple MarkDown Note</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Theory
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../../07/23/Theory/数据库主键类型的选择/">数据库主键的选择</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>archives</span></h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../../../archives/2018/08/">August 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../../archives/2018/07/">July 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../../archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tag cloud</span></h3>
+        <div class="widget tagcloud">
+            <a href="../../../../../../tags/C/" style="font-size: 20px;">C++</a> <a href="../../../../../../tags/CLRS/" style="font-size: 15px;">CLRS</a> <a href="../../../../../../tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="../../../../../../tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="../../../../../../tags/QT/" style="font-size: 10px;">QT</a> <a href="../../../../../../tags/数据库/" style="font-size: 10px;">数据库</a> <a href="../../../../../../tags/汇编/" style="font-size: 10px;">汇编</a>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Note/C++ Primer/C1&amp;2变量和基本类型" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="../../../../../../categories/Note/">Note</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="../../../../../../categories/Note/C-Primer/">C++ Primer</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="../../../../../../tags/C/">C++</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="">
+            <time datetime="2018-08-06T03:30:30.000Z" itemprop="datePublished">2018-08-06</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a href='https://github.com/agt/Wiki-site/raw/writing/source/_posts/Note/C++ Primer/C1&amp;2变量和基本类型.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/agt/Wiki-site/edit/writing/source/_posts/Note/C++ Primer/C1&amp;2变量和基本类型.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/agt/Wiki-site/commits/writing/source/_posts/Note/C++ Primer/C1&amp;2变量和基本类型.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            C1&amp;2变量和基本类型
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#C1初识C"><span class="toc-number">1.</span> <span class="toc-text">C1初识C++</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本IO"><span class="toc-number">1.1.</span> <span class="toc-text">基本IO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注释"><span class="toc-number">1.2.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见编译错误"><span class="toc-number">1.3.</span> <span class="toc-text">常见编译错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编辑-编译-调试周期"><span class="toc-number">1.4.</span> <span class="toc-text">编辑-编译-调试周期</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C2变量和基本类型"><span class="toc-number">2.</span> <span class="toc-text">C2变量和基本类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本内置类型"><span class="toc-number">2.1.</span> <span class="toc-text">基本内置类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#带符号类型"><span class="toc-number">2.2.</span> <span class="toc-text">带符号类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动类型转换"><span class="toc-number">2.3.</span> <span class="toc-text">自动类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量"><span class="toc-number">2.4.</span> <span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化"><span class="toc-number">2.4.1.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#列表初始化"><span class="toc-number">2.4.2.</span> <span class="toc-text">列表初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#默认初始化"><span class="toc-number">2.4.3.</span> <span class="toc-text">默认初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分离式编译机制"><span class="toc-number">2.4.4.</span> <span class="toc-text">分离式编译机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作用域"><span class="toc-number">2.4.5.</span> <span class="toc-text">作用域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复合类型"><span class="toc-number">2.5.</span> <span class="toc-text">复合类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#引用（左值引用-lvalue-reference）"><span class="toc-number">2.5.1.</span> <span class="toc-text">引用（左值引用 lvalue reference）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指针-pointer"><span class="toc-number">2.5.2.</span> <span class="toc-text">指针 (pointer)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#复合类型的声明"><span class="toc-number">2.5.3.</span> <span class="toc-text">复合类型的声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#const限定符"><span class="toc-number">2.5.4.</span> <span class="toc-text">const限定符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#对常量的引用（reference-to-const）"><span class="toc-number">2.5.4.1.</span> <span class="toc-text">对常量的引用（reference to const）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#初始化和对const的引用"><span class="toc-number">2.5.4.1.1.</span> <span class="toc-text">初始化和对const的引用</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#指针和const"><span class="toc-number">2.5.4.2.</span> <span class="toc-text">指针和const</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#const与执行对象拷贝"><span class="toc-number">2.5.4.2.1.</span> <span class="toc-text">const与执行对象拷贝</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#指向常量的复合类型"><span class="toc-number">2.5.4.2.2.</span> <span class="toc-text">指向常量的复合类型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#constexpr和常量表达式"><span class="toc-number">2.5.5.</span> <span class="toc-text">constexpr和常量表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常量表达式"><span class="toc-number">2.5.5.1.</span> <span class="toc-text">常量表达式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#constexpr"><span class="toc-number">2.5.5.2.</span> <span class="toc-text">constexpr</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#处理类型"><span class="toc-number">2.5.6.</span> <span class="toc-text">处理类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#typedef"><span class="toc-number">2.5.6.1.</span> <span class="toc-text">typedef</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#auto类型说明符"><span class="toc-number">2.5.6.2.</span> <span class="toc-text">auto类型说明符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#decltype类型指示符"><span class="toc-number">2.5.6.3.</span> <span class="toc-text">decltype类型指示符</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#decltype-处理与auto的不同"><span class="toc-number">2.5.6.3.1.</span> <span class="toc-text">decltype 处理与auto的不同</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#头文件防止重复包含"><span class="toc-number">2.6.</span> <span class="toc-text">头文件防止重复包含</span></a></li></ol></li></ol>
+                </div>
+            
+        
+        
+            <p>C++是一种相对比较复杂的，接近底层的编译语言</p>
+<hr>
+<h2 id="C1初识C"><a href="#C1初识C" class="headerlink" title="C1初识C++"></a>C1初识C++</h2><h3 id="基本IO"><a href="#基本IO" class="headerlink" title="基本IO"></a>基本IO</h3><ul>
+<li><code>cin</code>是一个<code>istream</code>对象，用来从标准输入中读取数据</li>
+<li><code>cout</code>是一个<code>ostream</code>对象，用于将数据写入标准输出</li>
+<li><code>cerr</code>是一个<code>ostream</code>对象，关联到标准错误，通常写入到与标准输出相同的设备，默认情况下写到Cerr的数据是不缓冲的</li>
+</ul>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>C++中有两种注释</p>
+<ol>
+<li>以双斜线 <code>//</code> 开始，右侧的所有内容被识别为注释</li>
+<li>从 <code>/*</code> 开始到<code>*/</code>结束，其中的内容被识别为注释，可以跨行，但是这两个界定符不能嵌套</li>
+</ol>
+<h3 id="常见编译错误"><a href="#常见编译错误" class="headerlink" title="常见编译错误"></a>常见编译错误</h3><p>编译器的一部分工作就是检查程序文本中的错误<br>其中一些常见的错误：</p>
+<ul>
+<li>语法错误(<em>syntax error</em>)：例如定义函数时漏掉了函数名后面的<code>()</code></li>
+<li>类型错误(<em>type error</em>):例如将一个字符串字面值常量传递给了一个期望参数为int型的函数</li>
+<li>声明错误(<em>declaration error</em>):C++中的每个名字都要先声明再使用。<ul>
+<li>常见的声明错误<ol>
+<li>对来自标准库的名字忘记使用std::</li>
+<li>标识符名字拼写错误</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>编译器无法发现程序是否有逻辑上的错误</p>
+</blockquote>
+<h3 id="编辑-编译-调试周期"><a href="#编辑-编译-调试周期" class="headerlink" title="编辑-编译-调试周期"></a>编辑-编译-调试周期</h3><p>在每修正一个错误后就立即重新编译代码，或者是修正了一小部分错误后就重新编译，这就是所谓的<code>edit-compile-debug</code>周期</p>
+<hr>
+<h2 id="C2变量和基本类型"><a href="#C2变量和基本类型" class="headerlink" title="C2变量和基本类型"></a>C2变量和基本类型</h2><h3 id="基本内置类型"><a href="#基本内置类型" class="headerlink" title="基本内置类型"></a>基本内置类型</h3><p>C++定义了一套包括<strong>算术类型</strong>和<strong>空类型</strong>在内的基本内置类型<br>算术类型分为：</p>
+<ol>
+<li>整型（包括字符和布尔类型）</li>
+<li>浮点型</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/12312259-50c19009c0eb3066.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="表2.1 C++:算术类型"></p>
+<blockquote>
+<p>一个int至少和一个short一样大，一个long至少和一个int一样大，一个long long至少和一个long一样大</p>
+</blockquote>
+<h3 id="带符号类型"><a href="#带符号类型" class="headerlink" title="带符号类型"></a>带符号类型</h3><ol>
+<li><code>bool型</code>以及<code>扩展的字符型</code>不支持<em>signed</em> 和 <em>unsigned</em></li>
+<li><code>字符型</code>被分为<em>char</em> , <em>signed char</em> 和 <em>unsigned char</em></li>
+<li><code>其它整型</code>可以划分为<em>signed</em> 和 <em>unsigned</em>的，默认是<em>signed</em></li>
+</ol>
+<h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><p>当在程序的某处我们使用了一种类型而实际上应该取另外一种类型的话，程序会自动进行类型转换(convert)</p>
+<ul>
+<li>将负数转换为一个无符号数类似于直接给一个无符号数赋一个负值，结果等于这个负数加上无符号数的模</li>
+</ul>
+<hr>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>在C++中变量的初始化和赋值是两种完全不一样的操作</p>
+<h4 id="列表初始化"><a href="#列表初始化" class="headerlink" title="列表初始化"></a>列表初始化</h4><ul>
+<li>形如：<code>int units_sold = {0};</code></li>
+<li>C++11</li>
+<li>若使用列表初始化时出现丢失信息的问题，则无法通过编译，例如  <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">double</span> ld = <span class="number">3.14156</span>;</span><br><span class="line"><span class="keyword">int</span> a&#123;ld&#125;;  <span class="comment">//类型转换将会丢失信息，编译失败</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="默认初始化"><a href="#默认初始化" class="headerlink" title="默认初始化"></a>默认初始化</h4><p>若在定义变量的时候没有指定初值，则变量将会被默认初始化(<em>default intialized</em>)，该默认值由变量的类型和位置影响</p>
+<ol>
+<li><p>类的对象如果没有被显示的初始化则其值由类决定（默认构造器）</p>
+</li>
+<li><p>对于内置类型来说</p>
+<ul>
+<li>定义于任何函数体之外的变量被初始化为0</li>
+<li>定义在函数体内部的变量不被初始化(<em>uninitialized</em>)</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>建议初始化每一个内置类型的变量<br><em>Murphy’s Law</em></p>
+</blockquote>
+<h4 id="分离式编译机制"><a href="#分离式编译机制" class="headerlink" title="分离式编译机制"></a>分离式编译机制</h4><p>C++支持分离式编译(<em>separate compilation</em>),允许将程序分割为若干个文件，每个文件可以被独立编译</p>
+<p>因此需要将声明(declaration)和定义(definition)区分开<br>声明负责让程序知道该对象的名字，而定义则负责创建于名字关联的实体</p>
+<p><strong>声明和定义的关系</strong></p>
+<ul>
+<li>任何包含了显示初始化的声明即成为定义</li>
+<li><p>使用<code>extern</code>可以只声明变量却不定义</p>
+  <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> i ;   <span class="comment">//声明i而不定义</span></span><br><span class="line"><span class="keyword">int</span> j;           <span class="comment">//声明并定义了j</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量只能被定义一次，但是可以被多次声明</p>
+</li>
+</ul>
+<h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><p>在嵌套作用域的情况下（如定义了两个同名的变量，其中一个是全局变量，一个是局部变量），在内层作用域中局部变量将会覆盖全局变量，可以用<code>::name</code>的方式显式地调用全局变量</p>
+<hr>
+<h3 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h3><h4 id="引用（左值引用-lvalue-reference）"><a href="#引用（左值引用-lvalue-reference）" class="headerlink" title="引用（左值引用 lvalue reference）"></a>引用（左值引用 <em>lvalue reference</em>）</h4><p>引用为对象起了另外一个名字，引用类型自身不是一个对象，它引用另外一种类型，通过<code>&amp;name</code>的方式声明引用类型的变量<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> ival = <span class="number">1024</span>;  </span><br><span class="line"><span class="keyword">int</span> &amp;refVal = ival;  <span class="comment">//定义了一个指向ival的引用</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>引用类型<strong>必须被初始化</strong></li>
+<li>由于引用不是对象，所以不能定义引用的引用</li>
+</ul>
+<p>一旦初始化成功，引用将和它的初始值绑定（bind）在一起，无法重新绑定</p>
+<h4 id="指针-pointer"><a href="#指针-pointer" class="headerlink" title="指针 (pointer)"></a>指针 (<em>pointer</em>)</h4><p>指针是一种保存另外一个对象的地址的复合类型对象</p>
+<p>使用<code>*p</code>定义指针变量，使用<code>解引用符*</code>来访问指针指向的对象</p>
+<ul>
+<li>空指针不指向任何对象，c++11中新增字面值<code>nullptr</code>来表示空指针,<code>nullptr</code>可以被转换为任意其它的指针类型</li>
+<li><code>NULL</code>是一个定义在cstdlib头文件中的预处理变量，其值为0</li>
+</ul>
+<h4 id="复合类型的声明"><a href="#复合类型的声明" class="headerlink" title="复合类型的声明"></a>复合类型的声明</h4><p>变量的定义中包括一个基本数据类型和一组声明符<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//i 为int型，p为int 指针型，r为int 引用型</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">1024</span>, *p = &amp;i , &amp;r = i;</span><br></pre></td></tr></table></figure></p>
+<p>对于复合类型来说，声明符的形式不同可以导致同一条定义语句定义出不同类型的变量</p>
+<hr>
+<h4 id="const限定符"><a href="#const限定符" class="headerlink" title="const限定符"></a>const限定符</h4><p><code>const</code>将变量限定为无法改变的</p>
+<ul>
+<li>由于无法改变，所以所有的const对象都必须要初始化</li>
+<li>只能在const类型的对象上执行不改变其内容的操作</li>
+<li>如果利用一个对象去初始化另外一个对象，则它们是不是const都无关紧要</li>
+<li>默认情况下const对象仅在文件内有效，若在不同文件中定义了一个同名的const变量，相当于在每个文件分别定义了独立的变量，解决方式是使用<code>extern</code>关键字。</li>
+</ul>
+<h5 id="对常量的引用（reference-to-const）"><a href="#对常量的引用（reference-to-const）" class="headerlink" title="对常量的引用（reference to const）"></a>对常量的引用（<em>reference to const</em>）</h5><p>常常用术语常量引用指代对const的引用</p>
+<p>由于C++本身限制了引用是更换修改绑定对象的，所以引用本身就有着“const”的属性</p>
+<ul>
+<li>常量引用无法修改它所绑定的变量</li>
+<li>对常量的引用是一种底层const</li>
+</ul>
+<h6 id="初始化和对const的引用"><a href="#初始化和对const的引用" class="headerlink" title="初始化和对const的引用"></a>初始化和对const的引用</h6><p>一般来说，引用的累心必须与其引用对象的类型一致。<br>但<strong>常量引用</strong>在初始化的时候允许用任意表达式作为初始值，只要该表达式的结果能转换成引用的类型即可。甚至可以允许一个常量引用绑定到非常量的对象、字面值、一般表达式上。</p>
+<blockquote>
+<p>因为当一个常量引用被绑定到另外一种类型上时，编译器为了确保常量引用的类型与等号右侧表达式的类型相匹配，自动添加了一个临时量(temporary)来充当中间的类型转换变量，当然这个常量引用本身绑定的是那个临时量</p>
+</blockquote>
+<p>如下<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> dval = <span class="number">3.14</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;ri = dval;</span><br></pre></td></tr></table></figure></p>
+<p>将会被编译器自动转换为<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> dval = <span class="number">3.14</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> temp = dval;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;ri = temp;</span><br></pre></td></tr></table></figure></p>
+<h5 id="指针和const"><a href="#指针和const" class="headerlink" title="指针和const"></a>指针和const</h5><p>由于指针本身就是一个对象，而它又可以指向一个对象，因此指针本身是不是常量以及指针指向的对象是不是常量就是两个独立的问题</p>
+<ul>
+<li>顶层const(top-level const)：表示指针本身是个常量</li>
+<li>底层const(low-level const)：表示指针所指的对象是个常量</li>
+</ul>
+<blockquote>
+<p>顶层const可以表示任意的对象是常量，这一点对任何数据类型都适用<br>而底层const则只与指针和引用等复合类型有关<br>而指针比较特殊，可以同时有顶层和底层const</p>
+</blockquote>
+<h6 id="const与执行对象拷贝"><a href="#const与执行对象拷贝" class="headerlink" title="const与执行对象拷贝"></a>const与执行对象拷贝</h6><ul>
+<li>顶层const没有什么影响</li>
+<li>拷入和拷出的对象必须具有相同的底层const资格</li>
+</ul>
+<h6 id="指向常量的复合类型"><a href="#指向常量的复合类型" class="headerlink" title="指向常量的复合类型"></a>指向常量的复合类型</h6><p>指向常量的指针（底层const）与常量引用一样，没有规定所指向的一定要是一个const的对象，仅仅要求的是无法通过该指针改变所指对象的值，没有规定那个对象的值无法通过其它途径修改</p>
+<hr>
+<h4 id="constexpr和常量表达式"><a href="#constexpr和常量表达式" class="headerlink" title="constexpr和常量表达式"></a>constexpr和常量表达式</h4><h5 id="常量表达式"><a href="#常量表达式" class="headerlink" title="常量表达式"></a>常量表达式</h5><p>常量表达式是指不会改变而且在编译过程就能得到计算结果的表达式</p>
+<ul>
+<li>字面值属于常量表达式</li>
+<li>用常量表达式初始化的const对象也是常量表达式</li>
+</ul>
+<h5 id="constexpr"><a href="#constexpr" class="headerlink" title="constexpr"></a>constexpr</h5><p>C++11中新增了constexpr类型，允许显式地指定变量为constexpr类型来使得编译器来验证变量的值是否为一个常量表达式</p>
+<ul>
+<li>constexpr指针的初始值只能是nullptr或者0，或是某个处于固定位置的对象</li>
+<li>constexpr将它的所定义的对象置为了顶层const</li>
+</ul>
+<blockquote>
+<p>函数体内定义的变量一般并非放在固定的地址中，而定义于所有函数之外的对象的地址是不变的</p>
+</blockquote>
+<hr>
+<h4 id="处理类型"><a href="#处理类型" class="headerlink" title="处理类型"></a>处理类型</h4><h5 id="typedef"><a href="#typedef" class="headerlink" title="typedef"></a>typedef</h5><p><code>typedef int number;</code><br>便可以用number关键字定义一个int型的变量</p>
+<p><strong>需要注意的是typedef并不是宏展开</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> *pstring;</span><br><span class="line"><span class="keyword">const</span> pstring cstr = <span class="number">0</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> * cstr2 = <span class="number">0</span> ;</span><br></pre></td></tr></table></figure>
+<p>这里的cstr是一个指向char型的常量指针（顶层const）<br>而cstr2是一个指向常量char的指针</p>
+<h5 id="auto类型说明符"><a href="#auto类型说明符" class="headerlink" title="auto类型说明符"></a>auto类型说明符</h5><p>auto关键字能让编译器替我们去分析表达式所属的类型</p>
+<ul>
+<li>auto定义的变量必须要有初始值（用以分析所属类型）</li>
+<li>使用auto在同一条语句中声明多个变量的时候，所有变量的初始基本数据类型需要一样</li>
+<li>当引用被当作auto推断的初始值的时候，真正参与初始化的其实是引用对象的值</li>
+<li>auto 一般会忽略掉顶层const，保留底层const</li>
+</ul>
+<h5 id="decltype类型指示符"><a href="#decltype类型指示符" class="headerlink" title="decltype类型指示符"></a>decltype类型指示符</h5><p>decltype可以选择并返回操作数的数据类型，编译器分析表达式的类型但不实际计算表达式的值</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">decltype</span>(num) num2; <span class="comment">// 定义了一个整型的num2</span></span><br></pre></td></tr></table></figure>
+<h6 id="decltype-处理与auto的不同"><a href="#decltype-处理与auto的不同" class="headerlink" title="decltype 处理与auto的不同"></a>decltype 处理与auto的不同</h6><p>decltype返回变量的类型（包括顶层const属性以及引用）</p>
+<blockquote>
+<p>变量是一种可以作为复制语句左值的特殊表达式</p>
+</blockquote>
+<p>所以decltype((varible))永远都是引用类型(双重括号)</p>
+<blockquote>
+<p>赋值也是一种会产生引用的表达式，引用的类型是左值的类型</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">3</span> , b =<span class="number">4</span>;</span><br><span class="line"><span class="keyword">decltype</span>(a = b) r = a; <span class="comment">//r是一个int 引用类型的变量</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="头文件防止重复包含"><a href="#头文件防止重复包含" class="headerlink" title="头文件防止重复包含"></a>头文件防止重复包含</h3><p>规范是使用类名的大写作为宏名来控制防止被多个文件多次包含<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> SOLUTION_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SOLUTION_H</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Your code here</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// SOLUTION_H</span></span></span><br></pre></td></tr></table></figure></p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+    
+        <a href="../../../../05/Engineer/归并排序/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">归并排序</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Agt &copy; 2018 
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        <script src="../../../../../../libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="../../../../../../libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="../../../../../../libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="../../../../../../js/main.js"></script>
+
+    </div>
+</body>
+</html>
