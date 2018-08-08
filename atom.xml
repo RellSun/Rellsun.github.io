@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-07T17:41:14.422Z</updated>
+  <updated>2018-08-08T03:37:55.364Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://yoursite.com/2018/08/07/Note/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/C3%E5%87%BD%E6%95%B0%E7%9A%84%E5%A2%9E%E9%95%BF/"/>
     <id>http://yoursite.com/2018/08/07/Note/算法导论/C3函数的增长/</id>
     <published>2018-08-07T12:50:23.000Z</published>
-    <updated>2018-08-07T17:41:14.422Z</updated>
+    <updated>2018-08-08T03:37:55.364Z</updated>
     
-    <content type="html"><![CDATA[<p>我们用函数$T(n)$来描述算法的运行时间<br>该函数的定义域一般来说是自然数集$N= ${ $ 0,1,2,…$ }</p><h2 id="描述算法运行效率的几种渐进记号"><a href="#描述算法运行效率的几种渐进记号" class="headerlink" title="描述算法运行效率的几种渐进记号"></a>描述算法运行效率的几种渐进记号</h2><blockquote><p>假设以下的每个函数都渐近非负</p></blockquote><hr><h3 id="theta-记号"><a href="#theta-记号" class="headerlink" title="$\theta$ 记号"></a>$\theta$ 记号</h3><p>$\theta$ 记号渐近地给出一个函数的<strong>上界和下界</strong></p><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>$\theta(g(n))=${ ${f(n):}$存在正常量$c_1,c_2$和$n_0$,使得对所有$n \ge n_0$,有$0 \le c_1(n) \le f(n) \le c_2g(n)$ } </p><p>换句话说，对所有$n \ge n_0$,函数$f(n)$在一个常量因子内等于$g(n)$,我们称$g(n)$是$f(n)$的一个<strong>渐近紧确界</strong>(<em>asymptotically tight bound</em>)</p><hr><h3 id="O-记号"><a href="#O-记号" class="headerlink" title="$O$记号"></a>$O$记号</h3><p>$O$ 记号给出一个函数的<strong>渐近上界</strong><br>这是比较常用的一个记号，常用以描述最坏情况(<em>worst-case scenario</em>)运行时间</p><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>$O(g(n))=${ ${f(n):}$存在正常量$c$和$n_0$,使得对所有$n \ge n_0$,有$0 \le  f(n) \le cg(n)$ } </p><blockquote><p>$f(n)=\theta(g(n))$蕴涵着$f(n)=O(g(n))$</p></blockquote><hr><h3 id="Omega-记号"><a href="#Omega-记号" class="headerlink" title="$\Omega$记号"></a>$\Omega$记号</h3><h3 id="o-记号"><a href="#o-记号" class="headerlink" title="$o$记号"></a>$o$记号</h3><h3 id="omega-记号"><a href="#omega-记号" class="headerlink" title="$\omega$记号"></a>$\omega$记号</h3><hr><h2 id="函数图像与记号类比"><a href="#函数图像与记号类比" class="headerlink" title="函数图像与记号类比"></a>函数图像与记号类比</h2><p><img src="https://upload-images.jianshu.io/upload_images/12312259-ac67cae124f9bd6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><h2 id="常用结论"><a href="#常用结论" class="headerlink" title="常用结论"></a>常用结论</h2>]]></content>
+    <content type="html"><![CDATA[<p>我们用函数$T(n)$来描述算法的运行时间<br>该函数的定义域一般来说是自然数集$N= ${ $ 0,1,2,\cdots  $ }</p><h2 id="描述算法运行效率的几种渐进记号"><a href="#描述算法运行效率的几种渐进记号" class="headerlink" title="描述算法运行效率的几种渐进记号"></a>描述算法运行效率的几种渐进记号</h2><blockquote><p>假设以下的每个函数都渐近非负</p></blockquote><hr><h3 id="theta-记号"><a href="#theta-记号" class="headerlink" title="$\theta$ 记号"></a>$\theta$ 记号</h3><p>$\theta$ 记号渐近地给出一个函数的<strong>上界和下界</strong></p><p>$\theta(g(n))  =${ ${f(n):}$存在正常量$c_1,c_2$和$n_0$,使得对所有$n \ge n_0$,有$0 \le c_1(n) \le f(n) \le c_2g(n)$ }</p><p>换句话说，对所有$n \ge n_0$,函数$f(n)$在一个常量因子内等于$g(n)$,我们称$g(n)$是$f(n)$的一个<strong>渐近紧确界</strong>(<em>asymptotically tight bound</em>)</p><hr><h3 id="O-记号"><a href="#O-记号" class="headerlink" title="$O$记号"></a>$O$记号</h3><p>$O$ 记号给出一个函数的<strong>渐近上界</strong><br>这是比较常用的一个记号，常用以描述最坏情况(<em>worst-case scenario</em>)运行时间</p><p>$O(g(n))=${ ${f(n):}$存在正常量$c$和$n_0$,使得对所有$n \ge n_0$,有$0 \le  f(n) \le cg(n)$ } </p><blockquote><p>$f(n)=\theta(g(n))$蕴涵着$f(n)=O(g(n))$</p></blockquote><hr><h3 id="Omega-记号"><a href="#Omega-记号" class="headerlink" title="$\Omega$记号"></a>$\Omega$记号</h3><p>$\Omega$ 记号给出一个函数的<strong>渐近下界</strong></p><p>$\Omega(g(n))=${ ${f(n):}$存在正常量$c$和$n_0$,使得对所有$n \ge n_0$,有$0 \le  cg(n) \le f(n)$ }</p><hr><h3 id="非渐近紧确"><a href="#非渐近紧确" class="headerlink" title="非渐近紧确"></a>非渐近紧确</h3><p>由$O$记号和$\Omega$记号表示的渐近界可能不是渐近紧确的<br>例如$2n^2=O(n)$是渐近紧确的，而$2n=O(n)$则不是渐近紧确的 </p><p>简单的说，对于非紧确的函数，随着$n$趋于无穷，$f(n)$与$g(n)$之间的差距不断拉大，导致$f(n)$相对于$g(n)$来说变得微不足道($o$记号) / 任意大了($\omega$记号) </p><hr><p>我们使用$o$记号和$\omega$记号用来分别表示非渐近紧确的上下界</p><h3 id="o-记号"><a href="#o-记号" class="headerlink" title="$o$记号"></a>$o$记号</h3><p>$o$记号表示一个<strong>非渐近紧确的上界</strong></p><p>$o(g(n))=${ ${f(n):}$对任意正常量$c \gt 0$，存在常量$n_0 \gt 0$,使得对所有的 $n \ge n_0$，有$0 \le f(n) \lt cg(n)$ }</p><p>例如，$2n = o(n^2)$ 但$2n^2 \ne o(n^2)$</p><p>或者可以将一个极限作为$o$记号的定义，即</p><script type="math/tex; mode=display">\lim_{n\to \infty } { f(n)  \over g(n) } =0</script><hr><h3 id="omega-记号"><a href="#omega-记号" class="headerlink" title="$\omega$记号"></a>$\omega$记号</h3><p>$\omega$记号表示一个<strong>非渐近紧确的下界</strong></p><p>$omega(g(n))=${ ${f(n):}$对任意正常量$c \gt 0$，存在常量$n_0 \gt 0$,使得对所有的 $n \ge n_0$，有$0 \le f(n) \lt cg(n)$ }</p><p>例如，$ { n^2 \over 2 } = \omega(n)$ 但 $ { n^2 \over 2 } \ne \omega(n^2)$</p><p>或者可以将一个极限作为$o$记号的定义，即</p><script type="math/tex; mode=display">\lim_{n\to \infty } { f(n)  \over g(n) } = \infty</script><hr><h2 id="函数图像与记号类比"><a href="#函数图像与记号类比" class="headerlink" title="函数图像与记号类比"></a>函数图像与记号类比</h2><p><img src="https://upload-images.jianshu.io/upload_images/12312259-ac67cae124f9bd6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><ul><li>(a) $\theta$记号</li><li>(b) $O$记号</li><li>(c) $\Omega$记号</li></ul><h3 id="渐近比较和实数比较之间的类比"><a href="#渐近比较和实数比较之间的类比" class="headerlink" title="渐近比较和实数比较之间的类比"></a>渐近比较和实数比较之间的类比</h3><ul><li>$f(n)=O(g(n))$ 类似于 $ a \le b$</li><li>$f(n)=\Omega(g(n))$ 类似于 $ a \ge b$</li><li>$f(n)=\theta(g(n))$ 类似于 $ a = b$</li><li>$f(n)=o(g(n))$ 类似于 $ a \lt b$</li><li>$f(n)=\omega(g(n))$ 类似于 $ a \gt b$</li></ul><hr><h2 id="常用结论"><a href="#常用结论" class="headerlink" title="常用结论"></a>常用结论</h2><ul><li>任意底大于1的指数函数比任意多项式比任意多项式函数增长得快</li><li>任意正的多项式函数都比任意多对数函数增长得快</li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;我们用函数$T(n)$来描述算法的运行时间&lt;br&gt;该函数的定义域一般来说是自然数集$N= ${ $ 0,1,2,…$ }&lt;/p&gt;
-&lt;h2 id=&quot;描述算法运行效率的几种渐进记号&quot;&gt;&lt;a href=&quot;#描述算法运行效率的几种渐进记号&quot; class=&quot;headerlink&quot; t
+        &lt;p&gt;我们用函数$T(n)$来描述算法的运行时间&lt;br&gt;该函数的定义域一般来说是自然数集$N= ${ $ 0,1,2,\cdots  $ }&lt;/p&gt;
+&lt;h2 id=&quot;描述算法运行效率的几种渐进记号&quot;&gt;&lt;a href=&quot;#描述算法运行效率的几种渐进记号&quot; class=&quot;header
       
     
     </summary>
@@ -96,9 +96,9 @@
       <category term="Engineer" scheme="http://yoursite.com/categories/Engineer/"/>
     
     
-      <category term="CLRS" scheme="http://yoursite.com/tags/CLRS/"/>
-    
       <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="CLRS" scheme="http://yoursite.com/tags/CLRS/"/>
     
   </entry>
   
@@ -236,9 +236,9 @@
       <category term="Engineer" scheme="http://yoursite.com/categories/Engineer/"/>
     
     
-      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
-    
       <category term="OpenCV" scheme="http://yoursite.com/tags/OpenCV/"/>
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
     
   </entry>
   
