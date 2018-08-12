@@ -3,24 +3,26 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
-    <title>C3 字符串、向量和数组 | Agt Wiki</title>
+    <title>标准库与字符串 | Agt Wiki</title>
     
     
         <meta name="keywords" content="C++" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="C++ Primer, 5th Edition作者: Stanley B. Lippman / Josée Lajoie / Barbara E. Moo   标准库命名空间 使用using namespace::name;可以声明特定的名字 头文件不应包含using声明，否则容易引起名字冲突   常用标准库类型string 类型标准库类型 string表示可变长的字符序列 初始化stringst">
+    <meta name="description" content="C++ Primer, 5th Edition作者: Stanley B. Lippman / Josée Lajoie / Barbara E. Moo   标准库命名空间 使用using namespace::name;可以声明特定的名字 头文件不应包含using声明，否则容易引起名字冲突   string 类型标准库类型 string表示可变长的字符序列 初始化stringstring s1">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C3 字符串、向量和数组">
+<meta property="og:title" content="标准库与字符串">
 <meta property="og:url" content="http://yoursite.com/2018/08/08/Note/C++ Primer/C3 字符串、向量和数组/index.html">
 <meta property="og:site_name" content="Agt Wiki">
-<meta property="og:description" content="C++ Primer, 5th Edition作者: Stanley B. Lippman / Josée Lajoie / Barbara E. Moo   标准库命名空间 使用using namespace::name;可以声明特定的名字 头文件不应包含using声明，否则容易引起名字冲突   常用标准库类型string 类型标准库类型 string表示可变长的字符序列 初始化stringst">
+<meta property="og:description" content="C++ Primer, 5th Edition作者: Stanley B. Lippman / Josée Lajoie / Barbara E. Moo   标准库命名空间 使用using namespace::name;可以声明特定的名字 头文件不应包含using声明，否则容易引起名字冲突   string 类型标准库类型 string表示可变长的字符序列 初始化stringstring s1">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-11T03:44:15.626Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12312259-51b5a9d9f53a9e3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-12T14:46:14.984Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C3 字符串、向量和数组">
-<meta name="twitter:description" content="C++ Primer, 5th Edition作者: Stanley B. Lippman / Josée Lajoie / Barbara E. Moo   标准库命名空间 使用using namespace::name;可以声明特定的名字 头文件不应包含using声明，否则容易引起名字冲突   常用标准库类型string 类型标准库类型 string表示可变长的字符序列 初始化stringst">
+<meta name="twitter:title" content="标准库与字符串">
+<meta name="twitter:description" content="C++ Primer, 5th Edition作者: Stanley B. Lippman / Josée Lajoie / Barbara E. Moo   标准库命名空间 使用using namespace::name;可以声明特定的名字 头文件不应包含using声明，否则容易引起名字冲突   string 类型标准库类型 string表示可变长的字符序列 初始化stringstring s1">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12312259-51b5a9d9f53a9e3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
     
 
     
@@ -216,7 +218,7 @@
                             &nbsp;
                             Engineer
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../../07/02/Engineer/OpenCV-环境搭建/">OpenCV C++环境搭建</a></li>  <li class="file"><a href="../../../../05/Engineer/归并排序/">归并排序</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../05/Engineer/归并排序/">归并排序</a></li>  <li class="file"><a href="../../../../../07/02/Engineer/OpenCV-环境搭建/">OpenCV C++环境搭建</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory open">
@@ -232,7 +234,16 @@
                             &nbsp;
                             C++ Primer
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="">C3 字符串、向量和数组</a></li>  <li class="file"><a href="../../../../06/Note/C++ Primer/C1&2变量和基本类型/">C1&2变量和基本类型</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="">标准库与字符串</a></li>  <li class="file"><a href="../../../../06/Note/C++ Primer/C1&2变量和基本类型/">变量和基本类型</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Tool
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../../05/21/Note/Tool/MarkDown Note/">Simple MarkDown Note</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -250,9 +261,9 @@
                             &nbsp;
                             算法导论
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../03/Note/算法导论/算法基础/">C1&2 算法基础</a></li>  <li class="file"><a href="../../../../07/Note/算法导论/C3函数的增长/">C3 函数的增长</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="../../../../07/Note/算法导论/C3函数的增长/">函数的增长</a></li>  <li class="file"><a href="../../../../03/Note/算法导论/C1算法基础/">算法基础</a></li>  </ul> 
                     </li> 
-                     <li class="file"><a href="../../../../../05/21/Note/MarkDown Note/">Simple MarkDown Note</a></li>  </ul> 
+                     </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -400,7 +411,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            C3 字符串、向量和数组
+            标准库与字符串
         </h1>
     
 
@@ -413,7 +424,7 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#标准库命名空间"><span class="toc-number">1.</span> <span class="toc-text">标准库命名空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用标准库类型"><span class="toc-number">2.</span> <span class="toc-text">常用标准库类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#string-类型"><span class="toc-number">2.1.</span> <span class="toc-text">string 类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化string"><span class="toc-number">2.1.1.</span> <span class="toc-text">初始化string</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#string类的常用函数"><span class="toc-number">2.1.2.</span> <span class="toc-text">string类的常用函数</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#标准库命名空间"><span class="toc-number">1.</span> <span class="toc-text">标准库命名空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#string-类型"><span class="toc-number">1.1.</span> <span class="toc-text">string 类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化string"><span class="toc-number">1.1.1.</span> <span class="toc-text">初始化string</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#string类的常用函数"><span class="toc-number">1.1.2.</span> <span class="toc-text">string类的常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#string-size-type类型"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">string::size_type类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#字面值和string对象相加"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">字面值和string对象相加</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#处理string对象中的单个字符"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">处理string对象中的单个字符</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#字符处理函数"><span class="toc-number">1.1.2.3.1.</span> <span class="toc-text">字符处理函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#range-for-语句"><span class="toc-number">1.1.2.3.2.</span> <span class="toc-text">$range for$ 语句</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
                 </div>
             
         
@@ -425,7 +436,7 @@
 <li>头文件不应包含<code>using</code>声明，否则容易引起名字冲突</li>
 </ol>
 <hr>
-<h2 id="常用标准库类型"><a href="#常用标准库类型" class="headerlink" title="常用标准库类型"></a>常用标准库类型</h2><h3 id="string-类型"><a href="#string-类型" class="headerlink" title="string 类型"></a>string 类型</h3><p>标准库类型 <code>string</code>表示可变长的字符序列</p>
+<h3 id="string-类型"><a href="#string-类型" class="headerlink" title="string 类型"></a>string 类型</h3><p>标准库类型 <code>string</code>表示可变长的字符序列</p>
 <h4 id="初始化string"><a href="#初始化string" class="headerlink" title="初始化string"></a>初始化string</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string s1;              //默认初始化，s1为空串  </span><br><span class="line">string s2(s1);          //s2是s1的副本</span><br><span class="line">string s2 = s1;         //等价于上一条</span><br><span class="line">string s3(&quot;value&quot;);     //s3是字面值的副本</span><br><span class="line">string s3 = &quot;value&quot;;    //等价于上一条</span><br><span class="line">string s4(n,&apos;c&apos;);       //s4初始化为连续n个&apos;c&apos;组成的串</span><br></pre></td></tr></table></figure>
 <p>其中通过 <code>=</code>初始化的执行的是<strong>拷贝初始化</strong>(<em>copy intialization</em>)<br>而不使用等号的话执行的就是<strong>直接初始化</strong>(<em>direct intialization</em>)</p>
 <h4 id="string类的常用函数"><a href="#string类的常用函数" class="headerlink" title="string类的常用函数"></a>string类的常用函数</h4><ul>
@@ -435,8 +446,22 @@
 <li><code>+</code>      字符串拼接</li>
 <li><code>&lt;=</code>     对于比较的两个字符串s1与s2，若s2包含s1的所有字符且s1比s2短，那么 <code>s1 &lt;= s2</code> ； 而若两个字符串在某个对应位置上不一致，则实际上比较的是那个不一致位置的字符</li>
 </ul>
-<hr>
-<p>…to be continue</p>
+<h5 id="string-size-type类型"><a href="#string-size-type类型" class="headerlink" title="string::size_type类型"></a>string::size_type类型</h5><p><code>string::size_type</code>是定义于string类型内部的，用来表示<strong>string的长度</strong>的一种<strong>与机器无关的类型</strong></p>
+<p>string类和其它很多标准库类型都定义了集中配套的类型</p>
+<blockquote>
+<p>混用该类型与int可能会造成错误，若<code>n</code>是一个负数的int型变量，那么<code>string.size() &lt; n</code>几乎总是为true的，因为<code>string::size_type</code>是一个无符号类型，而为了进行比较，n会转换成一个比较大的无符号值</p>
+</blockquote>
+<p>使用到<code>string::size_type</code>的地方</p>
+<ul>
+<li><code>size()</code>函数的返回值</li>
+<li>下标运算符 <code>[ ]</code>的输入参数</li>
+</ul>
+<h5 id="字面值和string对象相加"><a href="#字面值和string对象相加" class="headerlink" title="字面值和string对象相加"></a>字面值和string对象相加</h5><p>要确保 <code>+</code> 运算符两侧的运算对象至少有一个是string</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> s1;</span><br><span class="line"><span class="built_in">string</span> s2 = ( s1 + <span class="string">","</span> ) + <span class="string">"world"</span>; </span><br><span class="line"><span class="comment">//错误，括号内的两个对象都是字面值，无法直接相加</span></span><br><span class="line"><span class="built_in">string</span> s3 = ( <span class="string">"Hello"</span> + <span class="string">","</span> ) + s2;</span><br></pre></td></tr></table></figure>
+<h5 id="处理string对象中的单个字符"><a href="#处理string对象中的单个字符" class="headerlink" title="处理string对象中的单个字符"></a>处理string对象中的单个字符</h5><h6 id="字符处理函数"><a href="#字符处理函数" class="headerlink" title="字符处理函数"></a>字符处理函数</h6><p><img src="https://upload-images.jianshu.io/upload_images/12312259-51b5a9d9f53a9e3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cctype"></p>
+<h6 id="range-for-语句"><a href="#range-for-语句" class="headerlink" title="$range for$ 语句"></a>$range for$ 语句</h6><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (declaration : <span class="type">expression</span>)</span><br><span class="line">    statement</span><br></pre></td></tr></table></figure>
+<p>range for是C++11中新增的简单遍历某个容器的循环语句</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//将某个string变为大写</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="string">"Hello World!!!"</span>)</span></span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;c:s)   <span class="comment">//需要引用类型才可以改变c的值</span></span><br><span class="line">    c = <span class="built_in">toupper</span>(c);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
 
             </div>
         
@@ -452,7 +477,7 @@
     
         <a href="../../../../07/Note/算法导论/C3函数的增长/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">C3 函数的增长</div>
+            <div class="article-nav-title">函数的增长</div>
         </a>
     
 </nav>
