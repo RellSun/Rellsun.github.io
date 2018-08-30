@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-12T14:46:14.984Z</updated>
+  <updated>2018-08-12T14:48:37.227Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,35 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>标准库与字符串</title>
-    <link href="http://yoursite.com/2018/08/08/Note/C++%20Primer/C3%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84/"/>
-    <id>http://yoursite.com/2018/08/08/Note/C++ Primer/C3 字符串、向量和数组/</id>
-    <published>2018-08-08T14:17:30.000Z</published>
-    <updated>2018-08-12T14:46:14.984Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>C++ Primer</strong>, 5th Edition<br>作者: Stanley B. Lippman / Josée Lajoie / Barbara E. Moo </p><hr><h2 id="标准库命名空间"><a href="#标准库命名空间" class="headerlink" title="标准库命名空间"></a>标准库命名空间</h2><ol><li>使用<code>using namespace::name;</code>可以声明特定的名字</li><li>头文件不应包含<code>using</code>声明，否则容易引起名字冲突</li></ol><hr><h3 id="string-类型"><a href="#string-类型" class="headerlink" title="string 类型"></a>string 类型</h3><p>标准库类型 <code>string</code>表示可变长的字符序列</p><h4 id="初始化string"><a href="#初始化string" class="headerlink" title="初始化string"></a>初始化string</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string s1;              //默认初始化，s1为空串  </span><br><span class="line">string s2(s1);          //s2是s1的副本</span><br><span class="line">string s2 = s1;         //等价于上一条</span><br><span class="line">string s3(&quot;value&quot;);     //s3是字面值的副本</span><br><span class="line">string s3 = &quot;value&quot;;    //等价于上一条</span><br><span class="line">string s4(n,&apos;c&apos;);       //s4初始化为连续n个&apos;c&apos;组成的串</span><br></pre></td></tr></table></figure><p>其中通过 <code>=</code>初始化的执行的是<strong>拷贝初始化</strong>(<em>copy intialization</em>)<br>而不使用等号的话执行的就是<strong>直接初始化</strong>(<em>direct intialization</em>)</p><h4 id="string类的常用函数"><a href="#string类的常用函数" class="headerlink" title="string类的常用函数"></a>string类的常用函数</h4><ul><li><code>empty()</code>检查是否为空字符串</li><li><code>size()</code> 返回字符串中字符的个数</li><li><code>[n]</code>    返回字符串中第n个字符的引用</li><li><code>+</code>      字符串拼接</li><li><code>&lt;=</code>     对于比较的两个字符串s1与s2，若s2包含s1的所有字符且s1比s2短，那么 <code>s1 &lt;= s2</code> ； 而若两个字符串在某个对应位置上不一致，则实际上比较的是那个不一致位置的字符</li></ul><h5 id="string-size-type类型"><a href="#string-size-type类型" class="headerlink" title="string::size_type类型"></a>string::size_type类型</h5><p><code>string::size_type</code>是定义于string类型内部的，用来表示<strong>string的长度</strong>的一种<strong>与机器无关的类型</strong></p><p>string类和其它很多标准库类型都定义了集中配套的类型</p><blockquote><p>混用该类型与int可能会造成错误，若<code>n</code>是一个负数的int型变量，那么<code>string.size() &lt; n</code>几乎总是为true的，因为<code>string::size_type</code>是一个无符号类型，而为了进行比较，n会转换成一个比较大的无符号值</p></blockquote><p>使用到<code>string::size_type</code>的地方</p><ul><li><code>size()</code>函数的返回值</li><li>下标运算符 <code>[ ]</code>的输入参数</li></ul><h5 id="字面值和string对象相加"><a href="#字面值和string对象相加" class="headerlink" title="字面值和string对象相加"></a>字面值和string对象相加</h5><p>要确保 <code>+</code> 运算符两侧的运算对象至少有一个是string</p><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> s1;</span><br><span class="line"><span class="built_in">string</span> s2 = ( s1 + <span class="string">","</span> ) + <span class="string">"world"</span>; </span><br><span class="line"><span class="comment">//错误，括号内的两个对象都是字面值，无法直接相加</span></span><br><span class="line"><span class="built_in">string</span> s3 = ( <span class="string">"Hello"</span> + <span class="string">","</span> ) + s2;</span><br></pre></td></tr></table></figure><h5 id="处理string对象中的单个字符"><a href="#处理string对象中的单个字符" class="headerlink" title="处理string对象中的单个字符"></a>处理string对象中的单个字符</h5><h6 id="字符处理函数"><a href="#字符处理函数" class="headerlink" title="字符处理函数"></a>字符处理函数</h6><p><img src="https://upload-images.jianshu.io/upload_images/12312259-51b5a9d9f53a9e3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cctype"></p><h6 id="range-for-语句"><a href="#range-for-语句" class="headerlink" title="$range for$ 语句"></a>$range for$ 语句</h6><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (declaration : <span class="type">expression</span>)</span><br><span class="line">    statement</span><br></pre></td></tr></table></figure><p>range for是C++11中新增的简单遍历某个容器的循环语句</p><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//将某个string变为大写</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="string">"Hello World!!!"</span>)</span></span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;c:s)   <span class="comment">//需要引用类型才可以改变c的值</span></span><br><span class="line">    c = <span class="built_in">toupper</span>(c);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;C++ Primer&lt;/strong&gt;, 5th Edition&lt;br&gt;作者: Stanley B. Lippman / Josée Lajoie / Barbara E. Moo &lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;标准库命名空间&quot;&gt;&lt;a href=&quot;#标
-      
-    
-    </summary>
-    
-      <category term="Note" scheme="http://yoursite.com/categories/Note/"/>
-    
-      <category term="C++ Primer" scheme="http://yoursite.com/categories/Note/C-Primer/"/>
-    
-    
-      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
-    
-  </entry>
   
   <entry>
     <title>函数的增长</title>
@@ -71,6 +42,35 @@
     
     
       <category term="CLRS" scheme="http://yoursite.com/tags/CLRS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>标准库与字符串</title>
+    <link href="http://yoursite.com/2018/08/07/Note/C++%20Primer/C3%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84/"/>
+    <id>http://yoursite.com/2018/08/07/Note/C++ Primer/C3 字符串、向量和数组/</id>
+    <published>2018-08-07T04:17:30.000Z</published>
+    <updated>2018-08-30T08:34:15.969Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>C++ Primer</strong>, 5th Edition<br>作者: Stanley B. Lippman / Josée Lajoie / Barbara E. Moo </p><hr><h2 id="标准库命名空间"><a href="#标准库命名空间" class="headerlink" title="标准库命名空间"></a>标准库命名空间</h2><ol><li>使用<code>using namespace::name;</code>可以声明特定的名字</li><li>头文件不应包含<code>using</code>声明，否则容易引起名字冲突</li></ol><hr><h3 id="string-类型"><a href="#string-类型" class="headerlink" title="string 类型"></a>string 类型</h3><p>标准库类型 <code>string</code>表示可变长的字符序列</p><h4 id="初始化string"><a href="#初始化string" class="headerlink" title="初始化string"></a>初始化string</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string s1;              //默认初始化，s1为空串  </span><br><span class="line">string s2(s1);          //s2是s1的副本</span><br><span class="line">string s2 = s1;         //等价于上一条</span><br><span class="line">string s3(&quot;value&quot;);     //s3是字面值的副本</span><br><span class="line">string s3 = &quot;value&quot;;    //等价于上一条</span><br><span class="line">string s4(n,&apos;c&apos;);       //s4初始化为连续n个&apos;c&apos;组成的串</span><br></pre></td></tr></table></figure><p>其中通过 <code>=</code>初始化的执行的是<strong>拷贝初始化</strong>(<em>copy intialization</em>)<br>而不使用等号的话执行的就是<strong>直接初始化</strong>(<em>direct intialization</em>)</p><h4 id="string类的常用函数"><a href="#string类的常用函数" class="headerlink" title="string类的常用函数"></a>string类的常用函数</h4><ul><li><code>empty()</code>检查是否为空字符串</li><li><code>size()</code> 返回字符串中字符的个数</li><li><code>[n]</code>    返回字符串中第n个字符的引用</li><li><code>+</code>      字符串拼接</li><li><code>&lt;=</code>     对于比较的两个字符串s1与s2，若s2包含s1的所有字符且s1比s2短，那么 <code>s1 &lt;= s2</code> ； 而若两个字符串在某个对应位置上不一致，则实际上比较的是那个不一致位置的字符</li></ul><h5 id="string-size-type类型"><a href="#string-size-type类型" class="headerlink" title="string::size_type类型"></a>string::size_type类型</h5><p><code>string::size_type</code>是定义于string类型内部的，用来表示<strong>string的长度</strong>的一种<strong>与机器无关的类型</strong></p><p>string类和其它很多标准库类型都定义了集中配套的类型</p><blockquote><p>混用该类型与int可能会造成错误，若<code>n</code>是一个负数的int型变量，那么<code>string.size() &lt; n</code>几乎总是为true的，因为<code>string::size_type</code>是一个无符号类型，而为了进行比较，n会转换成一个比较大的无符号值</p></blockquote><p>使用到<code>string::size_type</code>的地方</p><ul><li><code>size()</code>函数的返回值</li><li>下标运算符 <code>[ ]</code>的输入参数</li></ul><h5 id="字面值和string对象相加"><a href="#字面值和string对象相加" class="headerlink" title="字面值和string对象相加"></a>字面值和string对象相加</h5><p>要确保 <code>+</code> 运算符两侧的运算对象至少有一个是string</p><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> s1;</span><br><span class="line"><span class="built_in">string</span> s2 = ( s1 + <span class="string">","</span> ) + <span class="string">"world"</span>; </span><br><span class="line"><span class="comment">//错误，括号内的两个对象都是字面值，无法直接相加</span></span><br><span class="line"><span class="built_in">string</span> s3 = ( <span class="string">"Hello"</span> + <span class="string">","</span> ) + s2;</span><br></pre></td></tr></table></figure><h5 id="处理string对象中的单个字符"><a href="#处理string对象中的单个字符" class="headerlink" title="处理string对象中的单个字符"></a>处理string对象中的单个字符</h5><h6 id="字符处理函数"><a href="#字符处理函数" class="headerlink" title="字符处理函数"></a>字符处理函数</h6><p><img src="https://upload-images.jianshu.io/upload_images/12312259-51b5a9d9f53a9e3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cctype"></p><h6 id="range-for-语句"><a href="#range-for-语句" class="headerlink" title="$range for$ 语句"></a>$range for$ 语句</h6><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (declaration : <span class="type">expression</span>)</span><br><span class="line">    statement</span><br></pre></td></tr></table></figure><p>range for是C++11中新增的简单遍历某个容器的循环语句</p><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//将某个string变为大写</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="string">"Hello World!!!"</span>)</span></span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;c:s)   <span class="comment">//需要引用类型才可以改变c的值</span></span><br><span class="line">    c = <span class="built_in">toupper</span>(c);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;C++ Primer&lt;/strong&gt;, 5th Edition&lt;br&gt;作者: Stanley B. Lippman / Josée Lajoie / Barbara E. Moo &lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;标准库命名空间&quot;&gt;&lt;a href=&quot;#标
+      
+    
+    </summary>
+    
+      <category term="Note" scheme="http://yoursite.com/categories/Note/"/>
+    
+      <category term="C++ Primer" scheme="http://yoursite.com/categories/Note/C-Primer/"/>
+    
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
     
   </entry>
   
@@ -137,7 +137,7 @@
     <link href="http://yoursite.com/2018/08/03/Note/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/C1%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
     <id>http://yoursite.com/2018/08/03/Note/算法导论/C1算法基础/</id>
     <published>2018-08-03T11:28:23.000Z</published>
-    <updated>2018-08-12T14:46:17.565Z</updated>
+    <updated>2018-08-30T06:49:09.674Z</updated>
     
     <content type="html"><![CDATA[<p><strong>算法导论</strong>, 3th Edition<br>作者: Thomas H.Cormen / Charles E.Leiserson / Ronald L.Rivest / Clifford Stein </p><hr><h2 id="算法的定义"><a href="#算法的定义" class="headerlink" title="算法的定义"></a>算法的定义</h2><ul><li>非形式地说，算法就是把输入转换为输出的计算步骤的一个序列</li><li>或是说算法描述了一个特定的计算过程，该过程实现了某个计算问题所期望的输入/输出关系</li></ul><h3 id="NP完全问题"><a href="#NP完全问题" class="headerlink" title="NP完全问题"></a>NP完全问题</h3><p>NP完全(NPC或NP-Complete)问题，是NP（非决定性多项式时间）中最难的决定性问题。</p><blockquote><p>可以在决定型依序机器上（例如图灵机）以多项式时间解决的决定性问题，其属于的复杂度类被称为P。</p><p>可以在多项式时间验证答案的决定性问题称为NP。</p><p>而NP也是可以在非确定型图灵机以多项式时间解决的问题（NP两字为Non-deterministic Polynomial的缩写）。</p></blockquote><p><a href="https://zh.wikipedia.org/wiki/%E5%A4%9A%E9%A0%85%E5%BC%8F%E6%99%82%E9%96%93" target="_blank" rel="noopener">多项式时间 wikipedia</a></p><p>NPC问题具有以下特性：</p><ol><li>是否存在有效算法是未知的</li><li>若果一个NPC问题存在有效算法，那么所有NPC问题都存在有效算法（因为NPC问题之间可以通过<strong>转换输入/输出</strong>来进行归约）</li></ol><hr><h2 id="算法基础"><a href="#算法基础" class="headerlink" title="算法基础"></a>算法基础</h2><h3 id="循环不变式-loop-invariant"><a href="#循环不变式-loop-invariant" class="headerlink" title="循环不变式  loop invariant"></a>循环不变式  loop invariant</h3><p>使用类似数学归纳法的思想，用来帮助我们理解算法的正确性</p><p>三条性质：</p><ol><li>初始化：循环的第一次迭代之前，它为真</li><li>保持:如果循环的某次迭代之前它为真，那么下次迭代之前它仍为真</li><li>终止：在循环终止的时候，不变式所处的状态有利于算法正确性的证明</li></ol><h3 id="增长量级"><a href="#增长量级" class="headerlink" title="增长量级"></a>增长量级</h3><p>若算法的运行时间估算表示为<code>an^2+bn+c</code></p><p>我们做出更简化的抽象：只考虑对事件影响最大的项，如这里的<code>an^2</code>，因为在这里感兴趣的是运行事件的<strong>增长率</strong>或<strong>增长量级</strong>，所以进一步化简为<code>O(n^2)</code>(此处应为’theta’符号)</p><h2 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h2><blockquote><p><strong>分治法思想</strong>：将原问题分解为几个规模较小但类似与原问题的子问题，递归地求解这些子问题，然后再合并这些子问题地解来简历原问题的解</p></blockquote><p>递归时的三个步骤：</p><ol><li>分解原问题</li><li>递归地解决各子问题，若子问题的规模足够小则直接求解</li><li>合并这些子问题的解成原问题的解</li></ol><hr><h2 id="Tips-of-CLRS"><a href="#Tips-of-CLRS" class="headerlink" title="Tips of (CLRS)"></a>Tips of (CLRS)</h2><ul><li>伪代码<ul><li>书中的循环计数器在退出循环后保留原值</li><li>布尔运算符都是短路的</li><li><code>NIL</code>用作不指向任何对象的指针的特殊值</li></ul></li><li>分析算法中假定一种通用的单处理器模型—随机访问处理器(Random-access machine,RAM)，该模型没有并发操作</li></ul>]]></content>
     
