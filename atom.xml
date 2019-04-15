@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-14T23:53:57.796Z</updated>
+  <updated>2019-04-15T13:11:01.587Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,16 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://yoursite.com/2019/04/15/%E7%B5%8C%E6%B8%88%E4%BD%93%E5%88%B6/"/>
-    <id>http://yoursite.com/2019/04/15/経済体制/</id>
-    <published>2019-04-14T23:53:57.796Z</published>
-    <updated>2019-04-14T23:53:57.796Z</updated>
+    <title>経済体制</title>
+    <link href="http://yoursite.com/2019/04/15/%E6%95%99%E5%AD%A6/%E7%B5%8C%E6%B8%88%E4%BD%93%E5%88%B6/"/>
+    <id>http://yoursite.com/2019/04/15/教学/経済体制/</id>
+    <published>2019-04-14T23:15:00.000Z</published>
+    <updated>2019-04-15T13:11:01.587Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="経済体制"><a href="#経済体制" class="headerlink" title="経済体制"></a>経済体制</h1><h2 id="1-資本主義と社会主義の違う"><a href="#1-資本主義と社会主義の違う" class="headerlink" title="1.資本主義と社会主義の違う"></a>1.資本主義と社会主義の違う</h2><div class="table-container"><table><thead><tr><th style="text-align:center">資本主義</th><th></th><th>社会主義</th></tr></thead><tbody><tr><td style="text-align:center">私有</td><td>生産手段</td><td>公有</td></tr><tr><td style="text-align:center">市場経済</td><td>経済形態</td><td>計画経済</td></tr><tr><td style="text-align:center">あり</td><td>利潤動機</td><td>なし</td></tr><tr><td style="text-align:center">あり</td><td>景気循環</td><td>なし</td></tr><tr><td style="text-align:center">あり</td><td>階級対立</td><td>なし</td></tr><tr><td style="text-align:center"></td><td>長所</td><td></td></tr><tr><td style="text-align:center">労働積極性</td><td></td><td>平等</td></tr><tr><td style="text-align:center">商品安価</td><td></td><td></td></tr><tr><td style="text-align:center"></td><td>短所</td><td></td></tr><tr><td style="text-align:center">貧富の格差</td><td></td><td>労働者の意欲低下</td></tr><tr><td style="text-align:center">失業</td><td></td></tr></tbody></table></div><h2 id="2-発展史"><a href="#2-発展史" class="headerlink" title="2.発展史"></a>2.発展史</h2><h3 id="3-資本主義の発展史"><a href="#3-資本主義の発展史" class="headerlink" title="3.資本主義の発展史"></a>3.資本主義の発展史</h3>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h1 id=&quot;経済体制&quot;&gt;&lt;a href=&quot;#経済体制&quot; class=&quot;headerlink&quot; title=&quot;経済体制&quot;&gt;&lt;/a&gt;経済体制&lt;/h1&gt;&lt;h2 id=&quot;1-資本主義と社会主義の違う&quot;&gt;&lt;a href=&quot;#1-資本主義と社会主義の違う&quot; class=&quot;headerli
+      
+    
     </summary>
     
+      <category term="総合" scheme="http://yoursite.com/categories/%E7%B7%8F%E5%90%88/"/>
+    
+      <category term="経済" scheme="http://yoursite.com/categories/%E7%B7%8F%E5%90%88/%E7%B5%8C%E6%B8%88/"/>
+    
+    
+      <category term="経済" scheme="http://yoursite.com/tags/%E7%B5%8C%E6%B8%88/"/>
     
   </entry>
   
